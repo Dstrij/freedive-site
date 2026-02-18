@@ -27,7 +27,19 @@ html, body {
     object-fit: cover;
 }
 
+/* fallback image (used on mobile) */
+#parallax-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("img/fon.jpg") center center / cover no-repeat;
+    opacity: 0;
+    z-index: -1;
+}
+
+/* ===================== */
 /* GRAIN */
+/* ===================== */
 .grain {
     position: absolute;
     inset: 0;
@@ -180,9 +192,8 @@ button.outline {
 }
 
 .card {
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     padding: 20px;
-    transition: 0.4s ease;
 }
 
 .card img {
@@ -234,18 +245,6 @@ button.outline {
 }
 
 /* ===================== */
-/* HOVER */
-/* ===================== */
-.hover {
-    transition: 0.4s ease;
-}
-
-.hover:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* ===================== */
 /* REVEAL */
 /* ===================== */
 .reveal {
@@ -263,12 +262,14 @@ button.outline {
 /* MOBILE */
 /* ===================== */
 @media (max-width: 900px) {
-    video {
+
+    /* показываем картинку вместо видео */
+    #bg-video {
         display: none;
     }
 
-    #parallax-bg {
-        background: url("img/fon.jpg") center / cover no-repeat;
+    #parallax-bg::before {
+        opacity: 1;
     }
 
     .grid,
@@ -283,25 +284,15 @@ button.outline {
     }
 }
 
-#water {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
 /* ===================== */
-/* MOBILE REFINEMENT */
+/* MOBILE SMALL */
 /* ===================== */
-
 @media (max-width: 600px) {
 
-    /* CONTAINER */
     .container {
         padding: 80px 16px;
     }
 
-    /* HEADER */
     .header {
         flex-direction: column;
         gap: 20px;
@@ -313,66 +304,21 @@ button.outline {
 
     .nav a {
         font-size: 12px;
-        letter-spacing: 0.06em;
-    }
-
-    /* HERO */
-    .hero {
-        padding: 0 10px;
     }
 
     .hero h1 {
         font-size: 42px;
-        line-height: 1.1;
     }
 
     .hero p {
         font-size: 16px;
-        margin-bottom: 30px;
     }
 
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    button {
-        width: 100%;
-        margin: 0;
-    }
-
-    /* SECTION TITLES */
-    .section-title {
-        font-size: 32px;
-        margin-bottom: 50px;
-    }
-
-    /* STATS */
-    .stat span {
-        font-size: 16px;
-    }
-
-    /* GRID */
     .grid {
         grid-template-columns: 1fr;
-        gap: 30px;
     }
 
-    /* GALLERY */
     .gallery {
         grid-template-columns: 1fr 1fr;
-    }
-
-    /* TEAM */
-    .member img {
-        width: 140px;
-        height: 140px;
-    }
-
-    /* HOVER OFF FOR TOUCH */
-    .hover:hover {
-        transform: none;
-        box-shadow: none;
     }
 }
