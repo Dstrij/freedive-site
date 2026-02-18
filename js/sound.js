@@ -3,10 +3,19 @@
 const ocean = new Audio('audio/surface.mp3');
 ocean.loop = true;
 ocean.volume = 0;
+ocean.preload = 'auto';
 
-// autoplay policy fix
+const surfaceUp = new Audio('audio/surface-up.mp3');
+surfaceUp.volume = 0.2;
+surfaceUp.preload = 'auto';
+
 let soundEnabled = false;
+let lastScrollY = window.scrollY;
+let wasUnderwater = false;
 
+/* ============================= */
+/* ENABLE SOUND (USER GESTURE) */
+/* ============================= */
 function enableSound() {
     if (soundEnabled) return;
     soundEnabled = true;
@@ -17,40 +26,31 @@ function enableSound() {
 document.addEventListener('click', enableSound, { once: true });
 document.addEventListener('touchstart', enableSound, { once: true });
 
-window.addEventListener('scroll', () => {
-    if (!soundEnabled) return;
-
-    const depth = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    ocean.volume = Math.min(depth * 0.6, 0.6);
-});
-
-// ===== ВСПЛЫТИЕ =====
-
-const surfaceUp = new Audio('audio/surface-up.mp3');
-surfaceUp.volume = 0.9;
-
-let lastScrollY = 0;
-let wasUnderwater = false;
-
+/* ============================= */
+/* SCROLL LOGIC */
+/* ============================= */
 window.addEventListener('scroll', () => {
     if (!soundEnabled) return;
 
     const currentScroll = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const depth = maxScroll > 0 ? currentScroll / maxScroll : 0;
 
-    // фиксируем, что человек реально нырнул
-    if (currentScroll > 100) {
+    /* ===== ПОГРУЖЕНИЕ (ТВОЙ КОД, НЕ ТРОГАЕМ) ===== */
+    ocean.volume = Math.min(depth * 0.6, 0.6);
+
+    if (currentScroll > 120) {
         wasUnderwater = true;
     }
 
-    // если СКРОЛЛ ВВЕРХ и дошли до верха
+    /* ===== ВСПЛЫТИЕ ===== */
     if (
         wasUnderwater &&
         currentScroll < 10 &&
         currentScroll < lastScrollY
     ) {
         surfaceUp.currentTime = 0;
-        surfaceUp.play();
-
+        surfaceUp.play().catch(() => {});
         wasUnderwater = false;
     }
 
