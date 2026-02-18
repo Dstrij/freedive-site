@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Фридайвинг экспедиции</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+        }
+        .map-placeholder {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            height: 300px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">DEEP<span>/</span></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="individual-tours.html">Индивидуальные туры</a></li>
+                    <li><a href="media.html">Медиа</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div style="width: 100px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="padding: 60px 0;">
+            <h1 class="section-title">Контакты</h1>
+
+            <div class="contacts-grid">
+                <!-- Левая колонка: информация -->
+                <div class="contact-info">
+                    <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+                    <p><strong>Email:</strong> info@deepfreediving.ru</p>
+                    <p><strong>Адрес офиса:</strong> Москва, ул. Погружений, д. 10</p>
+                    <p><strong>Соцсети:</strong> @deep_freediving (Telegram, Instagram)</p>
+                </div>
+
+                <!-- Правая колонка: форма -->
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea rows="5" placeholder="Ваш вопрос или пожелание" required></textarea>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Заглушка карты -->
+            <div class="map-placeholder">
+                🗺️ Здесь будет карта с отметкой офиса
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>© 2025 ТЕСТ</div>
+            <div>Соцсети / Контакты</div>
+        </div>
+    </footer>
+
+</body>
+</html>
