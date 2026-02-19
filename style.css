@@ -30,7 +30,7 @@ html, body {
     object-fit: cover;
 }
 
-/* DARK OVERLAY */
+/* OVERLAY */
 .overlay {
     position: absolute;
     inset: 0;
@@ -238,7 +238,7 @@ button.outline {
 
 @media (max-width: 900px) {
 
-    /* ФОН */
+    /* СТАТИЧНЫЙ ФОН */
     #parallax-bg {
         position: absolute;
         background: url("img/fon.jpg") center / cover no-repeat;
@@ -248,8 +248,9 @@ button.outline {
         display: none;
     }
 
-    /* УБИВАЕМ ТЯЖЕЛОЕ */
-    .grain {
+    /* УБИРАЕМ ВСЁ ТЯЖЁЛОЕ */
+    .grain,
+    .overlay {
         display: none;
     }
 

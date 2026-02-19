@@ -10,9 +10,7 @@
 </head>
 <body>
 
-<!-- ===================== -->
-<!-- PARALLAX VIDEO BG -->
-<!-- ===================== -->
+<!-- BACKGROUND (DESKTOP) -->
 <div id="parallax-bg">
     <video
         id="bg-video"
@@ -29,9 +27,7 @@
     <div class="overlay"></div>
 </div>
 
-<!-- ===================== -->
-<!-- PAGE CONTENT -->
-<!-- ===================== -->
+<!-- PAGE -->
 <div class="page">
 
 <header class="header container">
@@ -70,17 +66,17 @@
 <section class="container reveal">
     <h2 class="section-title">Популярные экспедиции</h2>
     <div class="grid">
-        <div class="card hover">
+        <div class="card">
             <img src="img/expeditions/indonesia.jpg" loading="lazy">
             <h3>Индонезия</h3>
             <span>$1500</span>
         </div>
-        <div class="card hover">
+        <div class="card">
             <img src="img/expeditions/maldives.jpg" loading="lazy">
             <h3>Мальдивы</h3>
             <span>$1800</span>
         </div>
-        <div class="card hover">
+        <div class="card">
             <img src="img/expeditions/philippines.jpg" loading="lazy">
             <h3>Филиппины</h3>
             <span>$1400</span>
@@ -93,15 +89,15 @@
 <section class="container reveal">
     <h2 class="section-title">Наша команда</h2>
     <div class="team">
-        <div class="member hover">
+        <div class="member">
             <img src="img/team/inna.jpg" loading="lazy">
             <span>Инна</span>
         </div>
-        <div class="member hover">
+        <div class="member">
             <img src="img/team/maria.jpg" loading="lazy">
             <span>Мария</span>
         </div>
-        <div class="member hover">
+        <div class="member">
             <img src="img/team/nata.jpg" loading="lazy">
             <span>Наталья</span>
         </div>
@@ -122,13 +118,18 @@
 
 </div>
 
-<!-- ===================== -->
-<!-- SCRIPTS -->
-<!-- ===================== -->
+<!-- DESKTOP SCRIPTS ONLY -->
+<script>
+if (window.innerWidth > 900) {
+    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
+        .forEach(src => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.defer = true;
+            document.body.appendChild(s);
+        });
+}
+</script>
 
-<script src="js/parallax.js"></script>
-<script src="js/reveal.js"></script>
-<script src="js/sound.js"></script>
-<script src="js/bubbles.js"></script>
 </body>
 </html>
