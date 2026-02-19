@@ -241,32 +241,29 @@ button.outline {
 /* ================================================= */
 
 @media (max-width: 900px) {
-
     html, body {
-        min-height: 100%;
+        height: 100%;
+        width: 100%;
     }
 
-    body {
-        background: #000;
-    }
-
-    /* ✅ ФОН ДЛЯ МОБИЛЫ — ПРАВИЛЬНО */
     .page {
+        position: relative;
         min-height: 100svh;
+        width: 100%;
         background-color: #000;
-        background-image:
+        background-image: 
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
             url("img/fon.jpg");
         background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
+        background-position: center;
+        background-size: contain;  /* Вся картинка видна полностью (могут быть чёрные поля) */
+        /* Если нужно заполнить весь экран без полей, замените contain на cover */
     }
-
 
     #parallax-bg,
     .overlay,
     .grain {
-        display: none !important;
+        display: none;
     }
 
     .reveal {
@@ -312,7 +309,6 @@ button.outline {
 /* MOBILE SMALL */
 /* ===================== */
 @media (max-width: 600px) {
-
     .container {
         padding: 80px 16px;
     }
