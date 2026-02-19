@@ -33,7 +33,7 @@ html, body {
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0,0,0,0.45);
 }
 
 .grain {
@@ -136,7 +136,7 @@ button.outline {
     width: 60%;
     height: 1px;
     margin: auto;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.15);
 }
 
 /* ===================== */
@@ -168,7 +168,7 @@ button.outline {
 /* ===================== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 40px;
 }
 
@@ -189,7 +189,9 @@ button.outline {
 }
 
 .member {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .member img {
@@ -201,6 +203,7 @@ button.outline {
 
 .member span {
     font-size: 14px;
+    text-align: center;
 }
 
 /* ===================== */
@@ -208,7 +211,7 @@ button.outline {
 /* ===================== */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 20px;
 }
 
@@ -224,7 +227,7 @@ button.outline {
 .reveal {
     opacity: 0;
     transform: translateY(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity .8s ease, transform .8s ease;
 }
 
 .reveal.visible {
@@ -238,21 +241,18 @@ button.outline {
 
 @media (max-width: 900px) {
 
-    /* ❗ КЛЮЧЕВОЕ: убираем fixed */
-    body {
-        background:
-            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg") center / cover no-repeat;
-        background-attachment: scroll;
-    }
-
-    #parallax-bg {
-        display: none;
-    }
-
+    /* УБИРАЕМ ТЯЖЁЛОЕ */
+    #parallax-bg,
     .overlay,
     .grain {
         display: none;
+    }
+
+    .page {
+        min-height: 100svh;
+        background:
+            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            url("img/fon.jpg") center / cover no-repeat;
     }
 
     .reveal {
@@ -266,28 +266,18 @@ button.outline {
         transition: none !important;
     }
 
-    /* ===================== */
-    /* STATS — ЧИТАЕМО */
-    /* ===================== */
+    /* STATS */
     .stats {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
         gap: 28px;
         max-width: 500px;
         margin: auto;
     }
 
-    .stat span {
-        font-size: 16px;
-        line-height: 1.3;
-    }
-
-    /* ===================== */
-    /* TEAM — БЕЗ ОБРЕЗКИ */
-    /* ===================== */
+    /* TEAM */
     .team {
         flex-wrap: wrap;
-        justify-content: center;
         gap: 28px;
     }
 
