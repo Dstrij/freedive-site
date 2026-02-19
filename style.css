@@ -259,7 +259,7 @@ button.outline {
         min-height: auto;                  /* 🔥 ключ */
     }
 
-    #parallax-bg,
+    parallax-bg,
     .overlay,
     .grain {
         display: none !important;
