@@ -238,10 +238,12 @@ button.outline {
 
 @media (max-width: 900px) {
 
+    /* ❗ КЛЮЧЕВОЕ: убираем fixed */
     body {
         background:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg") center / cover no-repeat fixed;
+            url("img/fon.jpg") center / cover no-repeat;
+        background-attachment: scroll;
     }
 
     #parallax-bg {
@@ -264,26 +266,43 @@ button.outline {
         transition: none !important;
     }
 
-    /* FIX STATS */
+    /* ===================== */
+    /* STATS — ЧИТАЕМО */
+    /* ===================== */
     .stats {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+        gap: 28px;
+        max-width: 500px;
+        margin: auto;
     }
 
-    /* FIX TEAM */
+    .stat span {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    /* ===================== */
+    /* TEAM — БЕЗ ОБРЕЗКИ */
+    /* ===================== */
     .team {
         flex-wrap: wrap;
-        gap: 24px;
+        justify-content: center;
+        gap: 28px;
     }
 
     .member img {
         width: 120px;
-        height: 120px;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 
     img {
         height: auto !important;
+    }
+
+    .hero {
+        min-height: 100svh;
     }
 }
 
