@@ -245,9 +245,13 @@ button.outline {
 
     /* ✅ ФОН КАК БЫЛ ИДЕАЛЬНЫМ */
     body {
-        background:
+        background-color: #000;
+        background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg") center / cover no-repeat;
+            url("img/fon.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
     }
 
     #parallax-bg,
