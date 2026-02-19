@@ -247,19 +247,24 @@ button.outline {
     }
 
     body {
-        background-color: #000;
+        background: #000;
+    }
+
+    /* ✅ ФОН ДЛЯ МОБИЛЫ — ПРАВИЛЬНО */
+    .page {
+        min-height: 100vh;
         background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
             url("img/fon.jpg");
         background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover; /* 🔥 ВОТ ГЛАВНОЕ */
+        background-position: center top;
+        background-size: cover;
     }
 
     #parallax-bg,
     .overlay,
     .grain {
-        display: none;
+        display: none !important;
     }
 
     .reveal {
@@ -289,6 +294,7 @@ button.outline {
     .member img {
         width: 120px;
         aspect-ratio: 1 / 1;
+        object-fit: cover;
     }
 
     img {
