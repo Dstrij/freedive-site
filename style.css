@@ -1,3 +1,6 @@
+/* ===================== */
+/* RESET */
+/* ===================== */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +15,7 @@ html, body {
 }
 
 /* ===================== */
-/* PARALLAX VIDEO BG */
+/* BACKGROUND (DESKTOP) */
 /* ===================== */
 #parallax-bg {
     position: fixed;
@@ -27,37 +30,22 @@ html, body {
     object-fit: cover;
 }
 
-/* fallback image */
-#parallax-bg::before {
-    content: "";
+.overlay {
     position: absolute;
     inset: 0;
-    background: url("img/fon.jpg") center center / cover no-repeat;
-    opacity: 0;
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.45);
 }
 
-/* ===================== */
-/* GRAIN */
-/* ===================== */
 .grain {
     position: absolute;
     inset: 0;
     background: url("https://grainy-gradients.vercel.app/noise.svg");
     opacity: 0.12;
-    mix-blend-mode: overlay;
     pointer-events: none;
 }
 
-/* DARK OVERLAY */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-}
-
 /* ===================== */
-/* PAGE LAYER */
+/* PAGE */
 /* ===================== */
 .page {
     position: relative;
@@ -87,7 +75,6 @@ html, body {
     letter-spacing: 0.2em;
 }
 
-/* NAV */
 .nav {
     display: flex;
     gap: 40px;
@@ -107,10 +94,9 @@ html, body {
 /* ===================== */
 .hero {
     min-height: 100vh;
-    min-height: 100svh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-inner {
@@ -129,7 +115,6 @@ html, body {
     margin-bottom: 40px;
 }
 
-/* BUTTONS */
 button {
     padding: 16px 36px;
     margin: 0 10px;
@@ -155,7 +140,7 @@ button.outline {
 }
 
 /* ===================== */
-/* SECTION TITLES */
+/* TITLES */
 /* ===================== */
 .section-title {
     text-align: center;
@@ -187,10 +172,6 @@ button.outline {
     gap: 40px;
 }
 
-.card {
-    padding: 20px;
-}
-
 .card img {
     width: 100%;
     height: 180px;
@@ -219,9 +200,7 @@ button.outline {
 }
 
 .member span {
-    display: block;
     font-size: 14px;
-    letter-spacing: 0.05em;
 }
 
 /* ===================== */
@@ -240,12 +219,12 @@ button.outline {
 }
 
 /* ===================== */
-/* REVEAL (DESKTOP) */
+/* REVEAL */
 /* ===================== */
 .reveal {
     opacity: 0;
     transform: translateY(60px);
-    transition: 1.2s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal.visible {
@@ -259,24 +238,17 @@ button.outline {
 
 @media (max-width: 900px) {
 
-    /* ❗ НЕ МЕНЯЕМ position */
-    #parallax-bg {
-        position: fixed;
-        transform: none !important;
+    body {
+        background:
+            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            url("img/fon.jpg") center / cover no-repeat fixed;
     }
 
-    /* отключаем видео */
-    #bg-video {
+    #parallax-bg {
         display: none;
     }
 
-    /* включаем картинку */
-    #parallax-bg::before {
-        opacity: 1;
-        z-index: 0;
-    }
-
-    /* убираем тяжёлое */
+    .overlay,
     .grain {
         display: none;
     }
@@ -285,6 +257,33 @@ button.outline {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* FIX STATS */
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    /* FIX TEAM */
+    .team {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    img {
+        height: auto !important;
     }
 }
 
@@ -321,7 +320,6 @@ button.outline {
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 30px;
     }
 
     .gallery {
