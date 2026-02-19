@@ -34,7 +34,7 @@ html, body {
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.45);
 }
 
 /* GRAIN (DESKTOP ONLY) */
@@ -219,7 +219,7 @@ button.outline {
 }
 
 /* ===================== */
-/* REVEAL (DESKTOP) */
+/* REVEAL (DESKTOP ONLY) */
 /* ===================== */
 .reveal {
     opacity: 0;
@@ -238,17 +238,21 @@ button.outline {
 
 @media (max-width: 900px) {
 
-    /* СТАТИЧНЫЙ ФОН */
-    #parallax-bg {
-        position: absolute;
-        background: url("img/fon.jpg") center / cover no-repeat;
+    /* САМЫЙ СТАБИЛЬНЫЙ МОБИЛЬНЫЙ ФОН */
+    body {
+        background: 
+            linear-gradient(
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)
+            ),
+            url("img/fon.jpg") center center / cover no-repeat fixed;
     }
 
-    #bg-video {
+    #parallax-bg {
         display: none;
     }
 
-    /* УБИРАЕМ ВСЁ ТЯЖЁЛОЕ */
+    /* УБИРАЕМ ТЯЖЁЛОЕ */
     .grain,
     .overlay {
         display: none;
