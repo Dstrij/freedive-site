@@ -202,8 +202,10 @@ button.outline {
 }
 
 .member span {
-    font-size: 14px;
+    display: block;
     text-align: center;
+    width: 100%;
+    font-size: 14px;
 }
 
 /* ===================== */
@@ -241,18 +243,17 @@ button.outline {
 
 @media (max-width: 900px) {
 
-    /* УБИРАЕМ ТЯЖЁЛОЕ */
+    /* ✅ ФОН КАК БЫЛ ИДЕАЛЬНЫМ */
+    body {
+        background:
+            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            url("img/fon.jpg") center / cover no-repeat;
+    }
+
     #parallax-bg,
     .overlay,
     .grain {
         display: none;
-    }
-
-    .page {
-        min-height: 100svh;
-        background:
-            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg") center / cover no-repeat;
     }
 
     .reveal {
@@ -266,7 +267,6 @@ button.outline {
         transition: none !important;
     }
 
-    /* STATS */
     .stats {
         display: grid;
         grid-template-columns: repeat(2,1fr);
@@ -275,7 +275,6 @@ button.outline {
         margin: auto;
     }
 
-    /* TEAM */
     .team {
         flex-wrap: wrap;
         gap: 28px;
