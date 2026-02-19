@@ -248,15 +248,16 @@ button.outline {
         background: #000;
     }
 
-    /* МОБИЛЬНЫЙ ФОН — СТАБИЛЬНЫЙ */
+    /* МОБИЛЬНЫЙ ФОН — ЦЕЛИКОМ, БЕЗ ОБРЕЗКИ */
     .page {
         min-height: 100svh;
-        background:
+        background-color: #000;
+        background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg");
+            url("img/fon-mobile.jpg");
         background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        background-size: contain;          /* 🔥 КЛЮЧ */
+        background-position: center top;   /* 🔥 */
     }
 
     /* УБИРАЕМ ДЕСКТОПНЫЕ СЛОИ */
