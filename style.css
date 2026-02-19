@@ -1,6 +1,3 @@
-/* ===================== */
-/* RESET */
-/* ===================== */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +12,7 @@ html, body {
 }
 
 /* ===================== */
-/* BACKGROUND (DESKTOP) */
+/* PARALLAX VIDEO BG */
 /* ===================== */
 #parallax-bg {
     position: fixed;
@@ -30,20 +27,33 @@ html, body {
     object-fit: cover;
 }
 
-/* OVERLAY */
-.overlay {
+/* fallback image */
+#parallax-bg::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: url("img/fon.jpg") center center / cover no-repeat;
+    opacity: 0;
+    z-index: -1;
 }
 
-/* GRAIN (DESKTOP ONLY) */
+/* ===================== */
+/* GRAIN */
+/* ===================== */
 .grain {
     position: absolute;
     inset: 0;
     background: url("https://grainy-gradients.vercel.app/noise.svg");
     opacity: 0.12;
+    mix-blend-mode: overlay;
     pointer-events: none;
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 /* ===================== */
@@ -77,6 +87,7 @@ html, body {
     letter-spacing: 0.2em;
 }
 
+/* NAV */
 .nav {
     display: flex;
     gap: 40px;
@@ -96,6 +107,7 @@ html, body {
 /* ===================== */
 .hero {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,6 +187,10 @@ button.outline {
     gap: 40px;
 }
 
+.card {
+    padding: 20px;
+}
+
 .card img {
     width: 100%;
     height: 180px;
@@ -191,6 +207,10 @@ button.outline {
     gap: 40px;
 }
 
+.member {
+    text-align: center;
+}
+
 .member img {
     width: 160px;
     height: 160px;
@@ -201,6 +221,7 @@ button.outline {
 .member span {
     display: block;
     font-size: 14px;
+    letter-spacing: 0.05em;
 }
 
 /* ===================== */
@@ -219,12 +240,12 @@ button.outline {
 }
 
 /* ===================== */
-/* REVEAL (DESKTOP ONLY) */
+/* REVEAL (DESKTOP) */
 /* ===================== */
 .reveal {
     opacity: 0;
     transform: translateY(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: 1.2s ease;
 }
 
 .reveal.visible {
@@ -238,23 +259,25 @@ button.outline {
 
 @media (max-width: 900px) {
 
-    /* САМЫЙ СТАБИЛЬНЫЙ МОБИЛЬНЫЙ ФОН */
-    body {
-        background: 
-            linear-gradient(
-                rgba(0,0,0,0.55),
-                rgba(0,0,0,0.55)
-            ),
-            url("img/fon.jpg") center center / cover no-repeat fixed;
+    /* ❗ НЕ МЕНЯЕМ position */
+    #parallax-bg {
+        position: fixed;
+        transform: none !important;
     }
 
-    #parallax-bg {
+    /* отключаем видео */
+    #bg-video {
         display: none;
     }
 
-    /* УБИРАЕМ ТЯЖЁЛОЕ */
-    .grain,
-    .overlay {
+    /* включаем картинку */
+    #parallax-bg::before {
+        opacity: 1;
+        z-index: 0;
+    }
+
+    /* убираем тяжёлое */
+    .grain {
         display: none;
     }
 
@@ -262,20 +285,6 @@ button.outline {
         opacity: 1;
         transform: none;
         transition: none;
-    }
-
-    * {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
-    }
-
-    .hero {
-        min-height: 100svh;
-    }
-
-    img {
-        height: auto !important;
     }
 }
 
