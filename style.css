@@ -244,18 +244,19 @@ button.outline {
 
     html, body {
         min-height: 100%;
-        background: #000;
-    }
-
-    .page {
-        min-height: 100svh;
         background-color: #000;
         background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg"); /* ТВОЯ ЖЕ КАРТИНКА */
+            url("img/fon.jpg");
         background-repeat: no-repeat;
-        background-size: contain;      /* КЛЮЧЕВОЕ */
-        background-position: center top;
+        background-size: contain;          /* вся картинка */
+        background-position: center top;   /* логично для вертикали */
+        background-attachment: scroll;     /* важно для Android */
+    }
+
+    .page {
+        background: transparent;
+        min-height: auto;                  /* 🔥 ключ */
     }
 
     #parallax-bg,
@@ -279,6 +280,7 @@ button.outline {
         min-height: 100svh;
     }
 }
+
 
 
 /* ===================== */
