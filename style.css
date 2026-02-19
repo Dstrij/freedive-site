@@ -254,7 +254,7 @@ button.outline {
         background-color: #000;
         background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon-mobile.jpg");
+            url("img/fon.jpg");
         background-repeat: no-repeat;
         background-size: contain;          /* 🔥 КЛЮЧ */
         background-position: center top;   /* 🔥 */
