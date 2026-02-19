@@ -240,7 +240,6 @@ button.outline {
 /* ================================================= */
 /* ===================== MOBILE ===================== */
 /* ================================================= */
-
 @media (max-width: 900px) {
 
     html, body {
@@ -248,19 +247,17 @@ button.outline {
         background: #000;
     }
 
-    /* МОБИЛЬНЫЙ ФОН — ЦЕЛИКОМ, БЕЗ ОБРЕЗКИ */
     .page {
         min-height: 100svh;
         background-color: #000;
         background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg");
+            url("img/fon.jpg"); /* ТВОЯ ЖЕ КАРТИНКА */
         background-repeat: no-repeat;
-        background-size: contain;          /* 🔥 КЛЮЧ */
-        background-position: center top;   /* 🔥 */
+        background-size: contain;      /* КЛЮЧЕВОЕ */
+        background-position: center top;
     }
 
-    /* УБИРАЕМ ДЕСКТОПНЫЕ СЛОИ */
     #parallax-bg,
     .overlay,
     .grain {
@@ -278,33 +275,11 @@ button.outline {
         transition: none !important;
     }
 
-    .stats {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 28px;
-        max-width: 500px;
-        margin: auto;
-    }
-
-    .team {
-        flex-wrap: wrap;
-        gap: 28px;
-    }
-
-    .member img {
-        width: 120px;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-    }
-
-    img {
-        height: auto !important;
-    }
-
     .hero {
         min-height: 100svh;
     }
 }
+
 
 /* ===================== */
 /* MOBILE SMALL */
