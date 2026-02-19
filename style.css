@@ -244,28 +244,33 @@ button.outline {
     html, body {
         height: 100%;
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
+    /* Основной фон для мобильных */
     .page {
         position: relative;
         min-height: 100svh;
         width: 100%;
-        background-color: #000;
+        background-color: #000; /* запасной цвет */
         background-image: 
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg");
+            url("img/fon.jpg"); /* Убедитесь, что путь правильный! */
         background-repeat: no-repeat;
         background-position: center;
-        background-size: contain;  /* Вся картинка видна полностью (могут быть чёрные поля) */
-        /* Если нужно заполнить весь экран без полей, замените contain на cover */
+        background-size: contain; /* Вся картинка видна полностью */
+        /* Если хотите заполнить экран без полей, замените на cover */
     }
 
+    /* Скрываем десктопные слои */
     #parallax-bg,
     .overlay,
     .grain {
         display: none;
     }
 
+    /* Отключаем анимации и эффекты для производительности */
     .reveal {
         opacity: 1;
         transform: none;
@@ -277,6 +282,7 @@ button.outline {
         transition: none !important;
     }
 
+    /* Сетки и карточки */
     .stats {
         display: grid;
         grid-template-columns: repeat(2,1fr);
