@@ -252,14 +252,16 @@ button.outline {
 
     /* ✅ ФОН ДЛЯ МОБИЛЫ — ПРАВИЛЬНО */
     .page {
-        min-height: 100vh;
+        min-height: 100svh;
+        background-color: #000;
         background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
             url("img/fon.jpg");
         background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
+        background-position: center center;
+        background-size: contain;
     }
+
 
     #parallax-bg,
     .overlay,
