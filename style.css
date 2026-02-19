@@ -240,31 +240,48 @@ button.outline {
 /* ================================================= */
 /* ===================== MOBILE ===================== */
 /* ================================================= */
+/* ================================================= */
+/* ===================== MOBILE ===================== */
+/* ================================================= */
 @media (max-width: 900px) {
 
-    html, body {
-        min-height: 100%;
-        background-color: #000;
+    /* 🔥 parallax-bg теперь фон */
+    #parallax-bg {
+        position: absolute;        /* ⬅️ не fixed */
+        inset: 0;
+        z-index: 0;
+
         background-image:
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
             url("img/fon.jpg");
+
         background-repeat: no-repeat;
-        background-size: contain;          /* вся картинка */
-        background-position: center top;   /* логично для вертикали */
-        background-attachment: scroll;     /* важно для Android */
+        background-size: cover;     /* 🔥 теперь МОЖНО */
+        background-position: center top;
     }
 
-    .page {
-        background: transparent;
-        min-height: auto;                  /* 🔥 ключ */
+    /* ❌ видео убираем */
+    #bg-video {
+        display: none;
     }
 
-    parallax-bg,
     .overlay,
     .grain {
-        display: none !important;
+        display: none;
     }
 
+    /* 🔥 страница растягивает фон */
+    .page {
+        position: relative;
+        z-index: 2;
+        min-height: 100%;
+    }
+
+    html, body {
+        background: #000;
+    }
+
+    /* ❌ убираем reveal */
     .reveal {
         opacity: 1;
         transform: none;
@@ -280,6 +297,7 @@ button.outline {
         min-height: 100svh;
     }
 }
+
 
 
 
