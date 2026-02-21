@@ -2,70 +2,108 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <!-- SEO: Расширенный заголовок -->
+    <title>Экспедиции по фридайвингу и подводной охоте | ABYSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Все экспедиции — Фридайвинг</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- SEO: Мета-описание страницы -->
+    <meta name="description" content="Лучшие экспедиции ABYSS для фридайвинга и подводной охоты: Индонезия, Мальдивы, Филиппины, Египет, Мексика. Групповые и индивидуальные туры с профессионалами.">
+    <!-- SEO: Open Graph для соцсетей -->
+    <meta property="og:title" content="Экспедиции ABYSS — фридайвинг и подводная охота">
+    <meta property="og:description" content="Погружения в лучших местах планеты. Малые группы, международные стандарты, снаряжение включено.">
+    <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg"> <!-- Замените на реальный URL -->
+    <meta property="og:url" content="https://вашсайт.ru/expeditions.html">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">DEEP<span>/</span></div>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="individual-tours.html">Индивидуальные туры</a></li>
-                    <li><a href="media.html">Медиа</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            <div style="width: 100px;"></div>
+<div id="parallax-bg">
+    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg">
+        <source src="video/ocean.mp4" type="video/mp4">
+    </video>
+    <div class="grain"></div>
+    <div class="overlay"></div>
+</div>
+
+<div class="page">
+
+<header class="header container">
+    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
+    <nav class="nav">
+        <a href="expeditions.html">Экспедиции</a>
+        <a href="individual.html">Индивидуальные туры</a>
+        <a href="media.html">Медиа</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<section class="hero" style="min-height: 60vh;">
+    <div class="hero-inner">
+        <h1>Наши экспедиции</h1>
+        <p>Групповые и индивидуальные погружения в лучших местах планеты</p>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Список экспедиций -->
+<section class="container reveal">
+    <h2 class="section-title">Ближайшие туры</h2>
+    <div class="grid">
+        <div class="card">
+            <!-- SEO: добавлен alt -->
+            <img src="img/expeditions/indonesia.jpg" alt="Дайвинг и подводная охота в Индонезии" loading="lazy">
+            <h3>Индонезия</h3>
+            <span>$1500</span>
         </div>
-    </header>
-
-    <main>
-        <div class="container" style="padding: 60px 0;">
-            <h1 class="section-title">Все экспедиции</h1>
-
-            <div class="expeditions-grid">
-                <!-- Карточка 1 -->
-                <div class="expedition-card" style="background-image: url('https://placehold.co/600x400/2b5e8c/white?text=Maldivi');">
-                    <span class="expedition-price">Мальдивы • 3 500€</span>
-                </div>
-                <!-- Карточка 2 -->
-                <div class="expedition-card" style="background-image: url('https://placehold.co/600x400/3d7b5a/white?text=Caribbean');">
-                    <span class="expedition-price">Карибы • 4 200€</span>
-                </div>
-                <!-- Карточка 3 -->
-                <div class="expedition-card" style="background-image: url('https://placehold.co/600x400/a34e4e/white?text=Norway');">
-                    <span class="expedition-price">Норвегия • 2 800€</span>
-                </div>
-                <!-- Карточка 4 -->
-                <div class="expedition-card" style="background-image: url('https://placehold.co/600x400/6b8e23/white?text=Egypt');">
-                    <span class="expedition-price">Египет • 2 200€</span>
-                </div>
-                <!-- Карточка 5 -->
-                <div class="expedition-card" style="background-image: url('https://placehold.co/600x400/9b59b6/white?text=Indonesia');">
-                    <span class="expedition-price">Индонезия • 3 900€</span>
-                </div>
-                <!-- Карточка 6 -->
-                <div class="expedition-card" style="background-image: url('https://placehold.co/600x400/e67e22/white?text=Japan');">
-                    <span class="expedition-price">Япония • 4 500€</span>
-                </div>
-            </div>
-
-            <!-- Кнопка подгрузить ещё (заглушка) -->
-            <div style="text-align: center; margin-top: 40px;">
-                <button class="btn btn-outline">Показать ещё</button>
-            </div>
+        <div class="card">
+            <img src="img/expeditions/maldives.jpg" alt="Фридайвинг на Мальдивах" loading="lazy">
+            <h3>Мальдивы</h3>
+            <span>$1800</span>
         </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div>© 2025 ТЕСТ</div>
-            <div>Соцсети / Контакты</div>
+        <div class="card">
+            <img src="img/expeditions/philippines.jpg" alt="Подводная охота на Филиппинах" loading="lazy">
+            <h3>Филиппины</h3>
+            <span>$1400</span>
         </div>
-    </footer>
+        <!-- Дополнительные туры -->
+        <div class="card">
+            <img src="img/expeditions/egypt.jpg" alt="Дайвинг в Египте (Красное море)" loading="lazy">
+            <h3>Египет</h3>
+            <span>$1200</span>
+        </div>
+        <div class="card">
+            <img src="img/expeditions/mexico.jpg" alt="Подводная охота в Мексике" loading="lazy">
+            <h3>Мексика</h3>
+            <span>$2200</span>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Календарь или описание -->
+<section class="container reveal" style="text-align: center;">
+    <p style="color: #bbb; max-width: 700px; margin: 0 auto;">Все экспедиции проходят с опытными инструкторами и соблюдением международных стандартов безопасности. Снаряжение предоставляется.</p>
+</section>
+
+<div class="divider"></div>
+
+</div>
+
+<script>
+if (window.innerWidth > 900) {
+    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
+        .forEach(src => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.defer = true;
+            document.body.appendChild(s);
+        });
+}
+</script>
 
 </body>
 </html>

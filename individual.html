@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- SEO: Расширенный заголовок -->
+    <title>Индивидуальные туры по фридайвингу и подводной охоте | ABYSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO: Мета-описание страницы -->
+    <meta name="description" content="Закажите индивидуальный тур по фридайвингу или подводной охоте в любой точке мира. ABYSS создаст экспедицию под ваши пожелания: сроки, локации, уровень подготовки.">
+    <!-- SEO: Open Graph для соцсетей -->
+    <meta property="og:title" content="Индивидуальные туры ABYSS — фридайвинг и подводная охота">
+    <meta property="og:description" content="Персональные экспедиции с профессионалами. Учитываем все пожелания, помогаем с организацией.">
+    <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg"> <!-- Замените на реальный URL -->
+    <meta property="og:url" content="https://вашсайт.ru/individual.html">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BACKGROUND (DESKTOP ONLY) -->
+<div id="parallax-bg">
+    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg">
+        <source src="video/ocean.mp4" type="video/mp4">
+    </video>
+    <div class="grain"></div>
+    <div class="overlay"></div>
+</div>
+
+<div class="page">
+
+<header class="header container">
+    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
+    <nav class="nav">
+        <a href="expeditions.html">Экспедиции</a>
+        <a href="individual.html">Индивидуальные туры</a>
+        <a href="media.html">Медиа</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<!-- Основной контент страницы Индивидуальные туры -->
+<section class="hero" style="min-height: 60vh;">
+    <div class="hero-inner">
+        <h1>Тур под вас</h1>
+        <p>Мы создадим экспедицию, учитывая все ваши пожелания</p>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="container reveal">
+    <h2 class="section-title">Как это работает</h2>
+    <div class="stats" style="flex-wrap: wrap; gap: 30px;">
+        <div class="stat"><span>1. Заявка</span></div>
+        <div class="stat"><span>2. Обсуждение</span></div>
+        <div class="stat"><span>3. Маршрут</span></div>
+        <div class="stat"><span>4. Погружение</span></div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="container reveal">
+    <h2 class="section-title">Оставьте заявку</h2>
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <p style="margin-bottom: 30px; color: #bbb;">Мы свяжемся с вами в ближайшее время</p>
+        <!-- Простая форма-заглушка -->
+        <form action="#" method="post">
+            <input type="text" placeholder="Ваше имя" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;">
+            <input type="email" placeholder="Email" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;">
+            <textarea placeholder="Ваши пожелания" rows="4" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;"></textarea>
+            <button type="submit" style="width: 100%;">Отправить</button>
+        </form>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Футер или дополнительная информация -->
+<section class="container reveal" style="padding: 60px 20px; text-align: center;">
+    <p style="color: #888;">Индивидуальные туры возможны в любые страны из нашего каталога</p>
+</section>
+
+</div>
+
+<script>
+if (window.innerWidth > 900) {
+    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
+        .forEach(src => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.defer = true;
+            document.body.appendChild(s);
+        });
+}
+</script>
+
+</body>
+</html>

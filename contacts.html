@@ -2,108 +2,99 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <!-- SEO: Улучшенный заголовок -->
+    <title>Контакты ABYSS | Свяжитесь с нами по вопросам экспедиций</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты — Фридайвинг экспедиции</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-top: 40px;
-        }
-        .contact-info p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 12px;
-            font-family: inherit;
-            font-size: 16px;
-            margin-bottom: 20px;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-        }
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
-        .contact-form button {
-            width: 100%;
-            padding: 15px;
-        }
-        .map-placeholder {
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(4px);
-            height: 300px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 40px;
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-    </style>
+    <!-- SEO: Мета-описание -->
+    <meta name="description" content="Свяжитесь с командой ABYSS: info@abyss.expeditions, телефон, адрес в Москве. Ответим на вопросы об экспедициях, индивидуальных турах и сотрудничестве.">
+    <!-- SEO: Open Graph для соцсетей -->
+    <meta property="og:title" content="Контакты ABYSS — авторские экспедиции">
+    <meta property="og:description" content="Напишите нам или позвоните. Мы всегда на связи!">
+    <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg"> <!-- Замените на реальный URL -->
+    <meta property="og:url" content="https://вашсайт.ru/contacts.html">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">DEEP<span>/</span></div>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="individual-tours.html">Индивидуальные туры</a></li>
-                    <li><a href="media.html">Медиа</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            <div style="width: 100px;"></div>
+<!-- BACKGROUND -->
+<div id="parallax-bg">
+    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg">
+        <source src="video/ocean.mp4" type="video/mp4">
+    </video>
+    <div class="grain"></div>
+    <div class="overlay"></div>
+</div>
+
+<div class="page">
+
+<header class="header container">
+    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
+    <nav class="nav">
+        <a href="expeditions.html">Экспедиции</a>
+        <a href="individual.html">Индивидуальные туры</a>
+        <a href="media.html">Медиа</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<!-- Заголовок -->
+<section class="hero" style="min-height: 40vh;">
+    <div class="hero-inner">
+        <h1>Свяжитесь с нами</h1>
+        <p>Ответим на любые вопросы</p>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="container reveal">
+    <div class="contacts-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+        <!-- Контактная информация -->
+        <div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px;">Контакты</h3>
+            <p style="margin-bottom: 15px; color: #ddd;">✉️ info@abyss.expeditions</p>
+            <p style="margin-bottom: 15px; color: #ddd;">📞 +7 (999) 123-45-67</p>
+            <p style="margin-bottom: 15px; color: #ddd;">📍 Москва, ул. Морская, д. 1</p>
+            <p style="margin-bottom: 15px; color: #ddd;">🌐 @abyss_official</p>
         </div>
-    </header>
-
-    <main>
-        <div class="container" style="padding: 60px 0;">
-            <h1 class="section-title">Контакты</h1>
-
-            <div class="contacts-grid">
-                <!-- Левая колонка: информация -->
-                <div class="contact-info">
-                    <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
-                    <p><strong>Email:</strong> info@deepfreediving.ru</p>
-                    <p><strong>Адрес офиса:</strong> Москва, ул. Погружений, д. 10</p>
-                    <p><strong>Соцсети:</strong> @deep_freediving (Telegram, Instagram)</p>
-                </div>
-
-                <!-- Правая колонка: форма -->
-                <div class="contact-form">
-                    <form action="#" method="post">
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="email" placeholder="Email" required>
-                        <textarea rows="5" placeholder="Ваш вопрос или пожелание" required></textarea>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Заглушка карты -->
-            <div class="map-placeholder">
-                🗺️ Здесь будет карта с отметкой офиса
-            </div>
+        <!-- Форма обратной связи -->
+        <div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px;">Напишите нам</h3>
+            <form action="#" method="post">
+                <input type="text" placeholder="Имя" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;">
+                <input type="email" placeholder="Email" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;">
+                <textarea placeholder="Сообщение" rows="4" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
         </div>
-    </main>
+    </div>
+</section>
 
-    <footer class="footer">
-        <div class="container">
-            <div>© 2025 ТЕСТ</div>
-            <div>Соцсети / Контакты</div>
-        </div>
-    </footer>
+<div class="divider"></div>
+
+<!-- Карта (заглушка) -->
+<section class="container reveal" style="text-align: center;">
+    <div style="background: #1a1a1a; height: 300px; display: flex; align-items: center; justify-content: center; color: #888;">Здесь будет карта</div>
+</section>
+
+<div class="divider"></div>
+
+</div>
+
+<script>
+if (window.innerWidth > 900) {
+    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
+        .forEach(src => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.defer = true;
+            document.body.appendChild(s);
+        });
+}
+</script>
 
 </body>
 </html>

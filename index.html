@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>ABYSS — Авторские экспедиции</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- SEO: Улучшенный заголовок страницы -->
+    <title>ABYSS — Авторские экспедиции по фридайвингу и подводной охоте</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO: Мета-описание -->
+    <meta name="description" content="Авторские экспедиции ABYSS: фридайвинг, подводная охота и дайвинг-туры в 20+ странах. Индивидуальные и групповые программы, международные стандарты безопасности.">
+    <!-- SEO: Open Graph для соцсетей (опционально) -->
+    <meta property="og:title" content="ABYSS — Авторские экспедиции по фридайвингу и подводной охоте">
+    <meta property="og:description" content="Погрузитесь в мир подводных приключений с командой профессионалов. Экспедиции любой сложности.">
+    <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg"> <!-- Замените на реальный URL картинки -->
+    <meta property="og:url" content="https://вашсайт.ru/">
+    <meta property="og:type" content="website">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -29,11 +38,12 @@
 <div class="page">
 
 <header class="header container">
-    <div class="logo">ABYSS</div>
+    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
     <nav class="nav">
-        <a href="#">Индивидуальные туры</a>
-        <a href="#">Медиа</a>
-        <a href="#">Контакты</a>
+        <a href="expeditions.html">Экспедиции</a>
+        <a href="individual.html">Индивидуальные туры</a>
+        <a href="media.html">Медиа</a>
+        <a href="contacts.html">Контакты</a>
     </nav>
 </header>
 
@@ -41,8 +51,8 @@
     <div class="hero-inner">
         <h1>Глубина — это опыт</h1>
         <p>Авторские экспедиции по фридайвингу и подводной охоте</p>
-        <button>Смотреть экспедиции</button>
-        <button class="outline">Индивидуальный тур</button>
+        <a href="expeditions.html"><button>Смотреть экспедиции</button></a>
+        <a href="individual.html"><button class="outline">Индивидуальный тур</button></a>
     </div>
 </section>
 
@@ -63,17 +73,18 @@
     <h2 class="section-title">Популярные экспедиции</h2>
     <div class="grid">
         <div class="card">
-            <img src="img/expeditions/indonesia.jpg" loading="lazy">
+            <!-- SEO: добавлен alt -->
+            <img src="img/expeditions/indonesia.jpg" alt="Дайвинг и подводная охота в Индонезии" loading="lazy">
             <h3>Индонезия</h3>
             <span>$1500</span>
         </div>
         <div class="card">
-            <img src="img/expeditions/maldives.jpg" loading="lazy">
+            <img src="img/expeditions/maldives.jpg" alt="Фридайвинг на Мальдивах" loading="lazy">
             <h3>Мальдивы</h3>
             <span>$1800</span>
         </div>
         <div class="card">
-            <img src="img/expeditions/philippines.jpg" loading="lazy">
+            <img src="img/expeditions/philippines.jpg" alt="Подводная охота на Филиппинах" loading="lazy">
             <h3>Филиппины</h3>
             <span>$1400</span>
         </div>
@@ -86,15 +97,15 @@
     <h2 class="section-title">Наша команда</h2>
     <div class="team">
         <div class="member">
-            <img src="img/team/inna.jpg" loading="lazy">
+            <img src="img/team/inna.jpg" alt="Инструктор по фридайвингу Инна" loading="lazy">
             <span>Инна</span>
         </div>
         <div class="member">
-            <img src="img/team/maria.jpg" loading="lazy">
+            <img src="img/team/maria.jpg" alt="Эксперт по подводной охоте Мария" loading="lazy">
             <span>Мария</span>
         </div>
         <div class="member">
-            <img src="img/team/nata.jpg" loading="lazy">
+            <img src="img/team/nata.jpg" alt="Руководитель экспедиций Наталья" loading="lazy">
             <span>Наталья</span>
         </div>
     </div>
@@ -105,10 +116,10 @@
 <section class="container reveal">
     <h2 class="section-title">Фото и видео</h2>
     <div class="gallery">
-        <img src="img/gallery/g1.jpg" loading="lazy">
-        <img src="img/gallery/g2.jpg" loading="lazy">
-        <img src="img/gallery/g3.jpg" loading="lazy">
-        <img src="img/gallery/g4.jpg" loading="lazy">
+        <img src="img/gallery/g1.jpg" alt="Подводный мир и дайверы" loading="lazy">
+        <img src="img/gallery/g2.jpg" alt="Фридайвинг в океане" loading="lazy">
+        <img src="img/gallery/g3.jpg" alt="Команда ABYSS на закате" loading="lazy">
+        <img src="img/gallery/g4.jpg" alt="Подводная охота с трофеем" loading="lazy">
     </div>
 </section>
 

@@ -2,152 +2,97 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <!-- SEO: Улучшенный заголовок -->
+    <title>Медиатека экспедиций ABYSS | Фото и видео фридайвинга и подводной охоты</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Медиа — Фридайвинг экспедиции</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Дополнительные стили только для этой страницы, если нужно */
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .media-card {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(4px);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .media-thumb {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background-size: cover;
-            background-position: center;
-        }
-        .media-info {
-            padding: 20px;
-            color: #fff;
-        }
-        .media-info h3 {
-            margin-bottom: 10px;
-        }
-    </style>
+    <!-- SEO: Мета-описание страницы -->
+    <meta name="description" content="Фотографии и видео из авторских экспедиций ABYSS: подводный мир, фридайвинг, охота, команда и атмосфера путешествий. Смотрите и вдохновляйтесь.">
+    <!-- SEO: Open Graph для соцсетей -->
+    <meta property="og:title" content="Медиатека ABYSS — фото и видео экспедиций">
+    <meta property="og:description" content="Яркие моменты подводных приключений: фридайвинг, подводная охота, команда и лучшие локации.">
+    <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg"> <!-- Замените на реальный URL -->
+    <meta property="og:url" content="https://вашсайт.ru/media.html">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">DEEP<span>/</span></div>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="individual-tours.html">Индивидуальные туры</a></li>
-                    <li><a href="media.html">Медиа</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            <div style="width: 100px;"></div>
-        </div>
-    </header>
-
-    <main>
-        <div class="container" style="padding: 60px 0;">
-            <h1 class="section-title">Медиа и фотоотчёты</h1>
-            
-            <div class="media-grid">
-                <!-- Карточка 1 (видео) -->
-                <div class="media-card">
-                    <div class="media-thumb" style="background-image: url('https://placehold.co/600x400/2b5e8c/white?text=Video+1');"></div>
-                    <div class="media-info">
-                        <h3>Экспедиция на Мальдивы</h3>
-                        <p>Короткий ролик о погружениях и китовых акулах.</p>
-                    </div>
-                </div>
-                <!-- Карточка 2 (фото) -->
-                <div class="media-card">
-                    <div class="media-thumb" style="background-image: url('https://placehold.co/600x400/3d7b5a/white?text=Photo+set');"></div>
-                    <div class="media-info">
-                        <h3>Норвегия: фьорды и холодная вода</h3>
-                        <p>Фотоотчёт о майской экспедиции.</p>
-                    </div>
-                </div>
-                <!-- Карточка 3 -->
-                <div class="media-card">
-                    <div class="media-thumb" style="background-image: url('https://placehold.co/600x400/a34e4e/white?text=Video+2');"></div>
-                    <div class="media-info">
-                        <h3>Тренировки на Сардинии</h3>
-                        <p>Как проходят сборы перед сезоном.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-<!-- ВРЕМЕННЫЙ КОНТЕНТ ДЛЯ ПРОВЕРКИ ФОНА -->
-<div style="margin-top: 50px;">
-    <h2 class="section-title">Тестовый контент для растяжки страницы</h2>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-        <!-- Повторяем один и тот же блок много раз -->
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Это тестовый блок, чтобы увеличить высоту страницы. Здесь могла бы быть информация об экспедициях, фотографии или что-то ещё. Главное — чтобы этот блок занимал место по вертикали.</p>
-        </div>
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Ещё один такой же блок. Добавим их побольше, чтобы страница стала длиннее.</p>
-        </div>
-        <!-- Скопируй этот div и вставь его ещё раз 10–15, чтобы набралась высота -->
-    </div>
+<!-- BACKGROUND -->
+<div id="parallax-bg">
+    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg">
+        <source src="video/ocean.mp4" type="video/mp4">
+    </video>
+    <div class="grain"></div>
+    <div class="overlay"></div>
 </div>
 
-<!-- ВРЕМЕННЫЙ КОНТЕНТ ДЛЯ ПРОВЕРКИ ФОНА -->
-<div style="margin-top: 50px;">
-    <h2 class="section-title">Тестовый контент для растяжки страницы</h2>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-        <!-- Повторяем один и тот же блок много раз -->
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Это тестовый блок, чтобы увеличить высоту страницы. Здесь могла бы быть информация об экспедициях, фотографии или что-то ещё. Главное — чтобы этот блок занимал место по вертикали.</p>
-        </div>
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Ещё один такой же блок. Добавим их побольше, чтобы страница стала длиннее.</p>
-        </div>
-        <!-- Скопируй этот div и вставь его ещё раз 10–15, чтобы набралась высота -->
+<div class="page">
+
+<header class="header container">
+    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
+    <nav class="nav">
+        <a href="expeditions.html">Экспедиции</a>
+        <a href="individual.html">Индивидуальные туры</a>
+        <a href="media.html">Медиа</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<!-- Заголовок -->
+<section class="hero" style="min-height: 50vh;">
+    <div class="hero-inner">
+        <h1>Медиатека</h1>
+        <p>Фото и видео из наших экспедиций</p>
     </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Галерея -->
+<section class="container reveal">
+    <h2 class="section-title">Фотографии</h2>
+    <div class="gallery">
+        <!-- SEO: добавлены alt-тексты для всех изображений -->
+        <img src="img/gallery/g1.jpg" alt="Фридайвер под водой с дельфинами" loading="lazy">
+        <img src="img/gallery/g2.jpg" alt="Подводная охота, охотник с рыбой" loading="lazy">
+        <img src="img/gallery/g3.jpg" alt="Команда ABYSS на закате у океана" loading="lazy">
+        <img src="img/gallery/g4.jpg" alt="Коралловый риф и дайверы" loading="lazy">
+        <img src="img/gallery/g1.jpg" alt="Фридайвинг в океане, девушка и дельфины" loading="lazy">
+        <img src="img/gallery/g2.jpg" alt="Подводный охотник с трофеем" loading="lazy">
+        <img src="img/gallery/g3.jpg" alt="Группа на фоне заката после погружения" loading="lazy">
+        <img src="img/gallery/g4.jpg" alt="Разноцветные рыбы на коралловом рифе" loading="lazy">
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Видео-секция (заглушка) -->
+<section class="container reveal">
+    <h2 class="section-title">Видео</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <div style="background: #1a1a1a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #888;">video placeholder</div>
+        <div style="background: #1a1a1a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #888;">video placeholder</div>
+        <div style="background: #1a1a1a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #888;">video placeholder</div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
 </div>
 
-<!-- ВРЕМЕННЫЙ КОНТЕНТ ДЛЯ ПРОВЕРКИ ФОНА -->
-<div style="margin-top: 50px;">
-    <h2 class="section-title">Тестовый контент для растяжки страницы</h2>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-        <!-- Повторяем один и тот же блок много раз -->
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Это тестовый блок, чтобы увеличить высоту страницы. Здесь могла бы быть информация об экспедициях, фотографии или что-то ещё. Главное — чтобы этот блок занимал место по вертикали.</p>
-        </div>
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Ещё один такой же блок. Добавим их побольше, чтобы страница стала длиннее.</p>
-        </div>
-        <!-- Скопируй этот div и вставь его ещё раз 10–15, чтобы набралась высота -->
-    </div>
-</div>
-
-<!-- ВРЕМЕННЫЙ КОНТЕНТ ДЛЯ ПРОВЕРКИ ФОНА -->
-<div style="margin-top: 50px;">
-    <h2 class="section-title">Тестовый контент для растяжки страницы</h2>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-        <!-- Повторяем один и тот же блок много раз -->
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Это тестовый блок, чтобы увеличить высоту страницы. Здесь могла бы быть информация об экспедициях, фотографии или что-то ещё. Главное — чтобы этот блок занимал место по вертикали.</p>
-        </div>
-        <div style="background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); border-radius: 20px; padding: 30px; color: white; border: 1px solid rgba(255,255,255,0.2);">
-            <p>Ещё один такой же блок. Добавим их побольше, чтобы страница стала длиннее.</p>
-        </div>
-        <!-- Скопируй этот div и вставь его ещё раз 10–15, чтобы набралась высота -->
-    </div>
-</div>
-
-    <footer class="footer">
-        <div class="container">
-            <div>© 2025 ТЕСТ</div>
-            <div>Соцсети / Контакты</div>
-        </div>
-    </footer>
+<script>
+if (window.innerWidth > 900) {
+    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
+        .forEach(src => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.defer = true;
+            document.body.appendChild(s);
+        });
+}
+</script>
 
 </body>
 </html>
