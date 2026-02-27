@@ -2,15 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- SEO: Улучшенный заголовок -->
     <title>Контакты ABYSS | Свяжитесь с нами по вопросам экспедиций</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO: Мета-описание -->
     <meta name="description" content="Свяжитесь с командой ABYSS: info@abyss.expeditions, телефон, адрес в Москве. Ответим на вопросы об экспедициях, индивидуальных турах и сотрудничестве.">
-    <!-- SEO: Open Graph для соцсетей -->
+
     <meta property="og:title" content="Контакты ABYSS — авторские экспедиции">
     <meta property="og:description" content="Напишите нам или позвоните. Мы всегда на связи!">
-    <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg"> <!-- Замените на реальный URL -->
+    <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg">
     <meta property="og:url" content="https://вашсайт.ru/contacts.html">
     <meta property="og:type" content="website">
 
@@ -21,9 +19,7 @@
 
 <!-- BACKGROUND -->
 <div id="parallax-bg">
-    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg">
-        <source src="video/ocean.mp4" type="video/mp4">
-    </video>
+    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg"></video>
     <div class="grain"></div>
     <div class="overlay"></div>
 </div>
@@ -31,7 +27,9 @@
 <div class="page">
 
 <header class="header container">
-    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
+    <a href="index.html" style="text-decoration:none;color:inherit;">
+        <div class="logo">ABYSS</div>
+    </a>
     <nav class="nav">
         <a href="expeditions.html">Экспедиции</a>
         <a href="individual.html">Индивидуальные туры</a>
@@ -40,8 +38,7 @@
     </nav>
 </header>
 
-<!-- Заголовок -->
-<section class="hero" style="min-height: 40vh;">
+<section class="hero" style="min-height:40vh;">
     <div class="hero-inner">
         <h1>Свяжитесь с нами</h1>
         <p>Ответим на любые вопросы</p>
@@ -51,39 +48,90 @@
 <div class="divider"></div>
 
 <section class="container reveal">
-    <div class="contacts-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
-        <!-- Контактная информация -->
+    <div class="contacts-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+
+        <!-- Контакты -->
         <div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px;">Контакты</h3>
-            <p style="margin-bottom: 15px; color: #ddd;">✉️ info@abyss.expeditions</p>
-            <p style="margin-bottom: 15px; color: #ddd;">📞 +7 (999) 123-45-67</p>
-            <p style="margin-bottom: 15px; color: #ddd;">📍 Москва, ул. Морская, д. 1</p>
-            <p style="margin-bottom: 15px; color: #ddd;">🌐 @abyss_official</p>
+            <h3 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:20px;">Контакты</h3>
+            <p style="margin-bottom:15px;color:#ddd;">✉️ info@abyss.expeditions</p>
+            <p style="margin-bottom:15px;color:#ddd;">📞 +7 (999) 123-45-67</p>
+            <p style="margin-bottom:15px;color:#ddd;">📍 Москва, ул. Морская, д. 1</p>
+            <p style="margin-bottom:15px;color:#ddd;">🌐 @abyss_official</p>
         </div>
-        <!-- Форма обратной связи -->
+
+        <!-- Форма -->
         <div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px;">Напишите нам</h3>
-            <form action="#" method="post">
-                <input type="text" placeholder="Имя" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;">
-                <input type="email" placeholder="Email" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;">
-                <textarea placeholder="Сообщение" rows="4" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff;"></textarea>
-                <button type="submit">Отправить</button>
-            </form>
+            <div style="max-width:420px;margin:0 auto;">
+
+                <h3 style="font-family:'Playfair Display',serif;
+                           font-size:28px;
+                           margin-bottom:25px;
+                           text-align:center;">
+                    Напишите нам
+                </h3>
+
+                <form action="https://formspree.io/f/xojnyrnr"
+                      method="POST"
+                      id="contactForm"
+                      style="text-align:left;">
+
+                    <!-- honeypot -->
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <input type="text" name="name" placeholder="Имя" required
+                           style="width:100%;padding:15px;margin-bottom:15px;
+                                  background:rgba(255,255,255,0.1);
+                                  border:none;color:#fff;box-sizing:border-box;">
+
+                    <input type="email" name="email" placeholder="Email" required
+                           style="width:100%;padding:15px;margin-bottom:15px;
+                                  background:rgba(255,255,255,0.1);
+                                  border:none;color:#fff;box-sizing:border-box;">
+
+                    <textarea name="message" placeholder="Сообщение" rows="4" required
+                              style="width:100%;padding:15px;margin-bottom:15px;
+                                     background:rgba(255,255,255,0.1);
+                                     border:none;color:#fff;box-sizing:border-box;"></textarea>
+
+                    <button type="submit" id="submitBtn"
+                            style="width:100%;padding:16px 36px;
+                                   background:#fff;border:none;
+                                   cursor:pointer;margin:0;
+                                   display:block;box-sizing:border-box;">
+                        Отправить
+                    </button>
+                </form>
+
+                <div id="formStatus"
+                     style="opacity:0;
+                            margin-top:20px;
+                            text-align:center;
+                            color:#9f9;
+                            transition:opacity .4s ease;">
+                    ✔ Сообщение отправлено. Мы скоро свяжемся с вами
+                </div>
+
+            </div>
         </div>
+
     </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- Карта (заглушка) -->
-<section class="container reveal" style="text-align: center;">
-    <div style="background: #1a1a1a; height: 300px; display: flex; align-items: center; justify-content: center; color: #888;">Здесь будет карта</div>
+<section class="container reveal" style="text-align:center;">
+    <div style="background:#1a1a1a;height:300px;
+                display:flex;align-items:center;
+                justify-content:center;color:#888;">
+        Здесь будет карта
+    </div>
 </section>
 
 <div class="divider"></div>
 
 </div>
 
+<!-- ДЕСКТОПНЫЕ СКРИПТЫ -->
 <script>
 if (window.innerWidth > 900) {
     ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
@@ -94,6 +142,51 @@ if (window.innerWidth > 900) {
             document.body.appendChild(s);
         });
 }
+</script>
+
+<!-- FORMSPREE AJAX -->
+<script>
+(function () {
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    const button = document.getElementById('submitBtn');
+
+    if (!form || !status || !button) return;
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        if (formData.get('_gotcha')) return;
+
+        button.disabled = true;
+        button.innerText = 'Отправка…';
+        button.style.opacity = '0.7';
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                button.innerText = '✓ Отправлено';
+                status.style.opacity = '1';
+
+                setTimeout(() => {
+                    form.style.transition = 'opacity .6s ease, transform .6s ease';
+                    form.style.opacity = '0';
+                    form.style.transform = 'translateY(10px)';
+                }, 3000);
+            }
+        } catch (err) {
+            button.innerText = 'Ошибка';
+            button.disabled = false;
+            button.style.opacity = '1';
+        }
+    });
+})();
 </script>
 
 </body>

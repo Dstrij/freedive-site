@@ -59,34 +59,99 @@
 <div class="divider"></div>
 
 <section class="container reveal">
-    <div class="stats">
-        <div class="stat"><span>20+ стран</span></div>
-        <div class="stat"><span>500+ клиентов</span></div>
-        <div class="stat"><span>Малые группы</span></div>
-        <div class="stat"><span>Международные стандарты</span></div>
+
+  <div class="stats">
+
+    <!-- 🌍 20 стран -->
+    <div class="stat">
+      <div class="icon-wrap">
+        <svg class="stat-icon globe" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18"/>
+          <ellipse cx="12" cy="12" rx="5" ry="9"/>
+        </svg>
+      </div>
+      <span>20+<br>стран</span>
     </div>
+
+    <!-- 👥 500 клиентов -->
+    <div class="stat">
+      <div class="icon-wrap">
+        <svg class="stat-icon people" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4">
+          <circle cx="12" cy="9" r="3"/>
+          <circle class="side left" cx="6.5" cy="11" r="2.5"/>
+          <circle class="side right" cx="17.5" cy="11" r="2.5"/>
+          <path d="M6 18c0-3 12-3 12 0"/>
+        </svg>
+      </div>
+      <span>500+<br>клиентов</span>
+    </div>
+
+    <!-- 🧭 Малые группы -->
+    <div class="stat">
+      <div class="icon-wrap">
+        <svg class="stat-icon compass" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4">
+          <circle cx="12" cy="12" r="9"/>
+          <g class="compass-needle">
+            <path d="M12 7L14.5 12L12 17L9.5 12Z"/>
+          </g>
+        </svg>
+      </div>
+      <span>Малые<br>группы</span>
+    </div>
+
+    <!-- 🛡 Международные стандарты -->
+    <div class="stat">
+      <div class="icon-wrap">
+        <svg class="stat-icon shield" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4">
+          <path d="M12 3L19 6V12C19 17 12 21 12 21C12 21 5 17 5 12V6L12 3Z"/>
+        </svg>
+      </div>
+      <span>Международные<br>стандарты</span>
+    </div>
+
+  </div>
+
 </section>
 
 <div class="divider"></div>
 
 <section class="container reveal">
     <h2 class="section-title">Популярные экспедиции</h2>
-    <div class="grid">
-        <div class="card">
-            <!-- SEO: добавлен alt -->
-            <img src="img/expeditions/indonesia.jpg" alt="Дайвинг и подводная охота в Индонезии" loading="lazy">
-            <h3>Индонезия</h3>
-            <span>$1500</span>
-        </div>
-        <div class="card">
-            <img src="img/expeditions/maldives.jpg" alt="Фридайвинг на Мальдивах" loading="lazy">
-            <h3>Мальдивы</h3>
-            <span>$1800</span>
-        </div>
-        <div class="card">
-            <img src="img/expeditions/philippines.jpg" alt="Подводная охота на Филиппинах" loading="lazy">
-            <h3>Филиппины</h3>
-            <span>$1400</span>
+
+    <div class="expeditions">
+        <div class="grid expeditions-grid">
+            
+            <a href="expeditions.html" class="card">
+                <img src="img/expeditions/indonesia.jpg" alt="Индонезия">
+                <h3>Индонезия</h3>
+                <span>$1500</span>
+            </a>
+
+            <a href="expeditions.html" class="card">
+                <img src="img/expeditions/maldives.jpg" alt="Мальдивы">
+                <h3>Мальдивы</h3>
+                <span>$1800</span>
+            </a>
+
+            <a href="expeditions.html" class="card">
+                <img src="img/expeditions/philippines.jpg" alt="Филиппины">
+                <h3>Филиппины</h3>
+                <span>$1400</span>
+            </a>
+
+            <a href="expeditions.html" class="card">
+                <img src="img/expeditions/egypt.jpg" alt="Египет">
+                <h3>Египет</h3>
+                <span>$1200</span>
+            </a>
+
+            <a href="expedition-norway.html" class="card">
+                <img src="img/expeditions/mexico.jpg" alt="Норвегия">
+                <h3>Мексика</h3>
+                <span>$2200</span>
+            </a>
+
         </div>
     </div>
 </section>
@@ -116,10 +181,10 @@
 <section class="container reveal">
     <h2 class="section-title">Фото и видео</h2>
     <div class="gallery">
-        <img src="img/gallery/g1.jpg" alt="Подводный мир и дайверы" loading="lazy">
-        <img src="img/gallery/g2.jpg" alt="Фридайвинг в океане" loading="lazy">
-        <img src="img/gallery/g3.jpg" alt="Команда ABYSS на закате" loading="lazy">
-        <img src="img/gallery/g4.jpg" alt="Подводная охота с трофеем" loading="lazy">
+        <a href="media.html"><img src="img/gallery/g1.jpg" alt="Подводный мир и дайверы" loading="lazy"></a>
+        <a href="media.html"><img src="img/gallery/g2.jpg" alt="Фридайвинг в океане" loading="lazy"></a>
+        <a href="media.html"><img src="img/gallery/g3.jpg" alt="Команда ABYSS на закате" loading="lazy"></a>
+        <a href="media.html"><img src="img/gallery/g4.jpg" alt="Подводная охота с трофеем" loading="lazy"></a>
     </div>
 </section>
 
@@ -127,7 +192,7 @@
 
 <script>
 if (window.innerWidth > 900) {
-    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
+    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js', 'js/expeditions-slider.js']
         .forEach(src => {
             const s = document.createElement('script');
             s.src = src;

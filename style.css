@@ -1,4 +1,41 @@
 /* ===================== */
+/* EXPEDITIONS SLIDER PC */
+/* ===================== */
+
+.expeditions-slider {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.expeditions-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.expeditions-track {
+    display: flex;
+    gap: 40px;
+    will-change: transform;
+}
+
+.expeditions-track .card {
+    flex: 0 0 340px;
+}
+
+.card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    opacity: 0.9;
+}
+
+/* ===================== */
 /* RESET */
 /* ===================== */
 * {
@@ -238,6 +275,93 @@ button.outline {
     transform: none;
 }
 
+.stats{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  text-align:center;
+}
+
+.stat{
+  flex:1;
+  cursor:pointer;
+  transition:transform .4s ease;
+}
+
+.stat:hover{
+  transform:translateY(-6px);
+}
+
+.icon-wrap{
+  margin-bottom:22px;
+}
+
+.stat-icon{
+  width:46px;
+  height:46px;
+  opacity:.6;
+  transition:.4s ease;
+  transform-origin:50% 50%;
+}
+
+.stat:hover .stat-icon{
+  opacity:1;
+  filter:drop-shadow(0 0 8px #5fd0ff);
+}
+
+/* 🌍 ВРАЩАЕТСЯ ВЕСЬ ГЛОБУС */
+.globe{
+  transition:transform 1.2s ease;
+  transform-style:preserve-3d;
+}
+
+.stat:hover .globe{
+  transform:rotateY(360deg);
+}
+
+
+/* 👥 Люди выглядывают */
+.people .side{
+  transition:transform .5s ease;
+}
+
+.stat:hover .people .left{
+  transform:translateX(-3px);
+}
+
+.stat:hover .people .right{
+  transform:translateX(3px);
+}
+
+
+/* 🧭 Компас вращение стрелки */
+.compass-needle{
+  transform-origin:12px 12px;
+  transition:transform 1s ease;
+}
+
+.stat:hover .compass-needle{
+  transform:rotate(180deg);
+}
+
+
+/* 🛡 Щит выдерживает удар */
+.shield{
+  transition:transform .3s ease;
+}
+
+.stat:hover .shield{
+  animation:shieldHit .6s ease;
+}
+
+@keyframes shieldHit{
+  0%{transform:translateX(0);}
+  25%{transform:translateX(-3px);}
+  50%{transform:translateX(3px);}
+  75%{transform:translateX(-2px);}
+  100%{transform:translateX(0);}
+}
+
 /* ================================================= */
 /* ===================== MOBILE ===================== */
 /* ================================================= */
@@ -246,6 +370,23 @@ button.outline {
 /* ================================================= */
 @media (max-width: 900px) {
 
+        .expeditions-grid {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+    }
+
+    .expeditions-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .expeditions-grid .card {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+    }
     /* 🔥 parallax-bg теперь фон */
     #parallax-bg {
         position: fixed;        /* ⬅️ не fixed */
@@ -316,6 +457,19 @@ button.outline {
     .header {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        text-align: center;  /* центрируем текст внутри ячеек */
+    }
+
+    /* Убедимся, что перенос строки работает */
+    .stat span {
+        white-space: normal;
+        display: block;      /* чтобы span занимал всю ширину */
     }
 
     .nav {
