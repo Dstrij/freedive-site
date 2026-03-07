@@ -46,6 +46,7 @@
 
 html, body {
     min-height: 100%;
+    touch-action: pan-y pinch-zoom;
     background: #000;
     color: #fff;
     font-family: 'Inter', sans-serif;
@@ -362,6 +363,270 @@ button.outline {
   100%{transform:translateX(0);}
 }
 
+/* ===== СТРАНИЦА ИНДИВИДУАЛЬНЫХ ТУРОВ ===== */
+
+/* Вступление (VIP-концепция) */
+.vip-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #ddd;
+}
+.vip-intro__lead {
+    font-size: 1.3rem;
+    color: #eef;
+    margin-bottom: 1rem;
+}
+.vip-intro__accent {
+    font-size: 1.2rem;
+    color: #fffa;
+    margin: 1.5rem 0;
+}
+.vip-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.tag {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    padding: 0.6rem 1.5rem;
+    border-radius: 40px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #ccc;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Пакеты */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0 20px;
+}
+.package-card {
+    background: rgba(20,30,40,0.7);
+    backdrop-filter: blur(6px);
+    padding: 2rem 1.8rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.2s ease, border-color 0.2s;
+}
+.package-card:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-4px);
+}
+.package-card--base {
+    border-left: 4px solid #6af;
+}
+.package-card--executive {
+    border-left: 4px solid #f80;
+}
+.package-card__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    color: #fff;
+}
+.package-card__price {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #9cf;
+    font-family: 'Inter', sans-serif;
+}
+.package-card__subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+.package-card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+.package-card__list li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+    color: #ccc;
+}
+.package-card__list li::before {
+    content: "•";
+    color: #6af;
+    position: absolute;
+    left: 0;
+}
+.package-card--executive .package-card__list li::before {
+    color: #f80;
+}
+.package-card__note {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.95rem;
+    border-top: 1px dashed rgba(255,255,255,0.1);
+    padding-top: 1rem;
+}
+.packages-note {
+    text-align: center;
+    color: #aaa;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    font-size: 0.95rem;
+}
+
+/* Детальное описание тура */
+.tour-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(10,20,30,0.5);
+    backdrop-filter: blur(4px);
+    padding: 2.5rem;
+    border-radius: 32px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.tour-detail__header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.tour-detail__header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.tour-detail__location {
+    font-size: 1.2rem;
+    color: #9cf;
+    margin-bottom: 1rem;
+}
+.tour-detail__badges {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.badge {
+    display: inline-block;
+    background: #6af;
+    color: #000;
+    font-weight: 600;
+    padding: 0.3rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.badge--orange {
+    background: #f80;
+}
+.tour-detail__content h4 {
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+    color: #ccd;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+.tour-detail__content ul {
+    list-style: none;
+    padding: 0;
+}
+.tour-detail__content li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: #ddd;
+}
+.tour-detail__content li::before {
+    content: "•";
+    color: #6af;
+    position: absolute;
+    left: 0;
+}
+.tour-detail__challenge {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0 0;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+}
+.tour-packages-note {
+    text-align: center;
+    margin-top: 2rem;
+    color: #aaa;
+}
+
+/* Форма (единообразие) */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-intro {
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+}
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: 1px solid #6af;
+    background: rgba(255,255,255,0.15);
+}
+#contactForm button {
+    width: 100%;
+    padding: 16px 36px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+#contactForm button:hover {
+    background: #eef;
+}
+.form-status {
+    opacity: 0;
+    margin-top: 20px;
+    color: #9f9;
+    transition: opacity .4s ease;
+    text-align: center;
+}
+
+/* Прочее */
+.other-tours-note {
+    color: #888;
+}
+.other-tours-note a {
+    color: #9cf;
+    text-decoration: none;
+}
+.other-tours-note a:hover {
+    text-decoration: underline;
+}
+
 /* ================================================= */
 /* ===================== MOBILE ===================== */
 /* ================================================= */
@@ -375,7 +640,7 @@ button.outline {
         gap: 20px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
         padding-bottom: 20px;
     }
 
