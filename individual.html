@@ -18,10 +18,7 @@
 <body>
 
 <!-- BACKGROUND -->
-<div id="parallax-bg">
-    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg">
-        <source src="video/ocean.mp4" type="video/mp4">
-    </video>
+<div id="parallax-bg" style="background-image:url('img/fon1.jpg');">
     <div class="grain"></div>
     <div class="overlay"></div>
 </div>
@@ -106,6 +103,98 @@
 <div class="divider"></div>
 
 <!-- ПРИМЕР ТУРА: река Пьяна (детальное описание) -->
+<section class="container reveal">
+    <h2 class="section-title">Пример тура: река Пьяна</h2>
+
+    <div class="tour-detail">
+        <div class="tour-detail__header">
+            <h3>Авторский VIP-тур по подводной охоте для двоих</h3>
+            <p class="tour-detail__location">Нижегородская область</p>
+            <div class="tour-detail__badges">
+                <span class="badge">Для двоих</span>
+                <span class="badge badge--orange">Индивидуально</span>
+            </div>
+        </div>
+
+        <div class="tour-detail__content">
+            <p>Есть форматы отдыха. А есть опыт, который объединяет и запоминается на годы. Этот тур — не массовая рыбалка и не экскурсия. Это закрытая экспедиция для двоих под руководством опытного инструктора, созданная как VIP-активность для руководителей, партнёров и ключевых сотрудников.</p>
+
+            <h4>Почему именно река Пьяна?</h4>
+            <ul>
+                <li>извилистое русло, участки с глубиной и ямами</li>
+                <li>прозрачная вода в сезон, разнообразная рыба</li>
+                <li>1000 оттенков зелени – фантастическая подводная флора</li>
+                <li>уединённость и природная атмосфера</li>
+            </ul>
+
+            <h4>Формат тура</h4>
+            <ul>
+                <li><strong>Участники:</strong> 2 человека</li>
+                <li><strong>Длительность:</strong> 11 часов (охота 5–6 часов)</li>
+                <li><strong>Формат:</strong> авторская экспедиция под ключ</li>
+            </ul>
+
+            <h4>Программа подготовительного дня:</h4>
+            <ul>
+                <li>Общая информация, подбор и примерка экипировки</li>
+                <li>Инструктаж по технике безопасности и работе в паре</li>
+                <li>Медицинский брифинг</li>
+            </ul>
+
+            <h4>Программа дня охоты:</h4>
+            <ul>
+                <li>Трансфер до локации, инструктаж, брифинг по тактике</li>
+                <li>5–6 часов охоты с инструктором (контроль безопасности, коррекция техники, выбор точек)</li>
+                <li>Возвращение, горячая вода, переодевание</li>
+                <li>Питание на свежем воздухе, приготовление улова (по возможности)</li>
+            </ul>
+
+            <h4>Что входит в тур</h4>
+            <ul>
+                <li>Трансфер</li>
+                <li>Полный комплект экипировки (костюм, ласты, маска, трубка, груза, ружьё, кукан)</li>
+                <li>Инструктор, обеспечивающий безопасность</li>
+                <li>Питание, базовая фото/видеосъёмка</li>
+            </ul>
+
+            <h4>Сезонность и безопасность</h4>
+            <p>Сезон: середина июня – конец сентября (июль–октябрь оптимальны).<br>
+            Инструктор сопровождает постоянно, обязательный брифинг, контроль погружений.</p>
+
+            <p class="tour-detail__challenge">Справишься?</p>
+        </div>
+    </div>
+
+    <!-- Дополнительная информация о пакетах в контексте этого тура (можно оставить или убрать, т.к. пакеты уже описаны выше) -->
+    <div class="tour-packages-note">
+        <p>Для этого тура доступны пакеты <strong>BASE</strong> и <strong>EXECUTIVE</strong> (см. описание выше).</p>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ФОРМА ЗАЯВКИ -->
+<section class="container reveal">
+    <h2 class="section-title">Оставьте заявку</h2>
+
+    <div class="form-container">
+        <p class="form-intro">Мы свяжемся с вами в ближайшее время и обсудим детали</p>
+
+        <form action="https://formspree.io/f/xojnyrnr" method="POST" id="contactForm">
+
+            <input type="text" name="_gotcha" style="display:none">
+
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Ваши пожелания (даты, пакет, вопросы)" rows="4" required></textarea>
+
+            <button type="submit" id="submitBtn">Отправить</button>
+        </form>
+
+        <div id="formStatus" class="form-status">✔ Заявка отправлена. Мы скоро свяжемся с вами</div>
+    </div>
+</section>
+
 <section class="container reveal">
     <h2 class="section-title">Пример тура: река Пьяна</h2>
 
