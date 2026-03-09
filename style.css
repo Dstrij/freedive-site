@@ -57,23 +57,28 @@ html, body {
 /* ===================== */
 /* BACKGROUND (DESKTOP) */
 /* ===================== */
-#parallax-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
+
+
+#parallax-bg{
+position: fixed;
+inset: 0;
+z-index: 0;
+transform: translateZ(0);
+background-size: cover;
+background-position: center top;
+background-repeat: no-repeat;
+
+will-change: transform;
 }
 
-#bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
+/* Изображение на странице индивидуальных туров */
+
 
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.6);
 }
 
 .grain {
@@ -627,15 +632,15 @@ button.outline {
     text-decoration: underline;
 }
 
-/* ================================================= */
-/* ===================== MOBILE ===================== */
-/* ================================================= */
+
+
+
 /* ================================================= */
 /* ===================== MOBILE ===================== */
 /* ================================================= */
 @media (max-width: 900px) {
 
-        .expeditions-grid {
+    .expeditions-grid {
         display: flex;
         gap: 20px;
         overflow-x: auto;
@@ -652,32 +657,27 @@ button.outline {
         flex: 0 0 80%;
         scroll-snap-align: center;
     }
-    /* 🔥 parallax-bg теперь фон */
+
+    /* Фон на мобильных устройствах */
     #parallax-bg {
-        position: fixed;        /* ⬅️ не fixed */
+        position: fixed;
         inset: 0;
         z-index: 0;
-
-        background-image:
-            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url("img/fon.jpg");
-
-        background-repeat: no-repeat;
-        background-size: cover;     /* 🔥 теперь МОЖНО */
-        background-position: center top;
     }
 
-    /* ❌ видео убираем */
+    /* Видео на главной скрываем */
     #bg-video {
         display: none;
     }
 
+
+
+    /* Оверлей и зерно скрываем для мобильных (можно оставить, если нужно) */
     .overlay,
     .grain {
         display: none;
     }
 
-    /* 🔥 страница растягивает фон */
     .page {
         position: relative;
         z-index: 2;
@@ -688,7 +688,6 @@ button.outline {
         background: #000;
     }
 
-    /* ❌ убираем reveal */
     .reveal {
         opacity: 1;
         transform: none;
@@ -703,12 +702,7 @@ button.outline {
     .hero {
         min-height: 100svh;
     }
-
-    
 }
-
-
-
 
 /* ===================== */
 /* MOBILE SMALL */
@@ -728,26 +722,25 @@ button.outline {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        text-align: center;  /* центрируем текст внутри ячеек */
+        text-align: center;
     }
 
-    /* Убедимся, что перенос строки работает */
     .stat span {
         white-space: normal;
-        display: block;      /* чтобы span занимал всю ширину */
+        display: block;
     }
 
     .nav {
-        flex-direction: column;  /* пункты друг под другом */
-        align-items: center;     /* центрируем по горизонтали */
-        gap: 8px;                /* небольшой отступ между пунктами */
-        width: 100%;             /* занимаем всю ширину */
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
     }
 
     .nav a {
-        font-size: 14px;         /* чуть крупнее для удобства */
-        display: block;          /* чтобы ссылки занимали всю ширину */
-        padding: 5px 0;          /* добавляем небольшие отступы для кликабельности */
+        font-size: 14px;
+        display: block;
+        padding: 5px 0;
     }
 
     .hero h1 {
@@ -769,24 +762,24 @@ button.outline {
 
     .team {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* две равные колонки */
-        gap: 20px;               /* расстояние между карточками */
-        justify-items: center;   /* центрируем содержимое по горизонтали */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
     }
 
     .member {
-        width: 100%;             /* карточка занимает всю ширину колонки */
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .member img {
-        width: 100%;             /* ширина фото = ширина карточки */
+        width: 100%;
         height: auto;
-        aspect-ratio: 1 / 1;     /* квадратный контейнер */
-        object-fit: cover;       /* фото заполнит квадрат (обрежется при необходимости) */
-        border-radius: 8px;      /* можете убрать, если не нужно */
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
     }
 
     .member span {
@@ -799,13 +792,13 @@ button.outline {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 16px;          /* расстояние между кнопками */
+        gap: 16px;
     }
 
     .hero-inner button {
-        margin: 0;           /* убираем старые горизонтальные отступы */
-        width: 100%;         /* кнопки занимают всю доступную ширину */
-        max-width: 300px;    /* но не шире 300px, чтобы не растягивались слишком сильно */
+        margin: 0;
+        width: 100%;
+        max-width: 300px;
     }
 
     .contacts-grid {
@@ -813,4 +806,3 @@ button.outline {
         gap: 30px;
     }
 }
-
