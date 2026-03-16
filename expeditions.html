@@ -19,10 +19,7 @@
 </head>
 <body>
 
-<div id="parallax-bg">
-    <video id="bg-video" autoplay muted loop playsinline preload="auto" poster="img/fon.jpg">
-        <source src="video/ocean.mp4" type="video/mp4">
-    </video>
+<div id="parallax-bg" style="background-image:url('img/fon2.jpg');">
     <div class="grain"></div>
     <div class="overlay"></div>
 </div>
@@ -95,7 +92,7 @@
 
 <script>
 if (window.innerWidth > 900) {
-    ['js/parallax.js','js/reveal.js','js/sound.js','js/bubbles.js']
+    ['js/reveal.js','js/sound.js','js/bubbles.js']
         .forEach(src => {
             const s = document.createElement('script');
             s.src = src;
