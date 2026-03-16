@@ -603,11 +603,13 @@ button.outline {
     border: none;
     cursor: pointer;
     display: block;
+    margin: 0 auto; /* ← добавляем это - центрирует блочный элемент */
     box-sizing: border-box;
     font-weight: 600;
     font-size: 1rem;
     border-radius: 8px;
     transition: background 0.2s;
+}
 }
 #contactForm button:hover {
     background: #eef;
