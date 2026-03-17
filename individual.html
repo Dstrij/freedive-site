@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Авторские туры | ABYSS — подводная охота и фридайвинг для двоих</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VIP-экспедиции для двоих: пакеты BASE и EXECUTIVE. Индивидуальные туры по подводной охоте и фридайвингу в любую точку мира.">
+    <meta name="description" content="VIP-экспедиции для двоих: пакеты BASE и EXECUTIVE. Индивидуальные туры по подводной охоте и фридайвингу.">
     <meta property="og:title" content="Авторские туры ABYSS — VIP-экспедиции">
     <meta property="og:description" content="Закрытые туры для руководителей и партнёров. Полное сопровождение, приватность, профессиональная съёмка.">
     <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg">
@@ -12,6 +12,26 @@
     <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для изображений в карточках локаций */
+        .package-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 15px;
+        }
+        .location-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+        }
+        .location-link:hover .package-card {
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-4px);
+        }
+    </style>
 </head>
 <body>
 
@@ -41,9 +61,31 @@
     </div>
 </section>
 
+<!-- 1. Формат тура (блок с цифрами) -->
+<section class="container reveal" style="padding-top: 20px; padding-bottom: 20px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+            <div style="font-size: 2rem; color: #6af;">2</div>
+            <div>участника</div>
+        </div>
+        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+            <div style="font-size: 2rem; color: #6af;">1</div>
+            <div>инструктор</div>
+        </div>
+        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+            <div style="font-size: 2rem; color: #6af;">10-12</div>
+            <div>часов экспедиции</div>
+        </div>
+        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+            <div style="font-size: 2rem; color: #6af;">5-6</div>
+            <div>часов охоты</div>
+        </div>
+    </div>
+</section>
+
 <div class="divider"></div>
 
-<!-- Вступление: VIP-концепция -->
+<!-- 2. VIP-концепция -->
 <section class="container reveal">
     <div class="vip-intro">
         <p class="vip-intro__lead">Это закрытая экспедиция для двоих под руководством опытного инструктора, созданная как VIP-активность для руководителей, партнёров и ключевых сотрудников.</p>
@@ -59,7 +101,7 @@
 
 <div class="divider"></div>
 
-<!-- ПАКЕТЫ (общие для всех авторских туров) -->
+<!-- 3. Пакеты -->
 <section class="container reveal">
     <h2 class="section-title">Пакеты</h2>
     <div class="packages-grid">
@@ -100,7 +142,56 @@
 
 <div class="divider"></div>
 
-<!-- ========== НОВЫЙ КОНТЕНТ: ПОДРОБНОЕ ОПИСАНИЕ АВТОРСКИХ ТУРОВ ========== -->
+<!-- 4. Локации экспедиций (с изображениями и ссылками) -->
+<section class="container reveal">
+    <h2 class="section-title">Локации экспедиций</h2>
+    <div class="packages-grid">
+        <!-- Река Пьяна -->
+        <a href="piana.html" class="location-link">
+            <div class="package-card">
+                <img src="img/tour/piana/piana.jpg" alt="Река Пьяна">
+                <h4 class="package-card__title">Река Пьяна</h4>
+                <p class="package-card__subtitle">Экспедиционный сплав</p>
+                <p>Самая динамичная программа. Извилистая река с глубокими участками, постоянная смена локаций, высокий элемент приключения. Уникальная подводная растительность.</p>
+                <p><small>можно охотиться без погружений, формат «движения и поиска»</small></p>
+            </div>
+        </a>
+
+        <!-- Озеро Вад -->
+        <a href="vad.html" class="location-link">
+            <div class="package-card">
+                <img src="img/tour/vad/vad.jpg" alt="Озеро Вад">
+                <h4 class="package-card__title">Озеро Вад</h4>
+                <p class="package-card__subtitle">Чистая вода и подводные ландшафты</p>
+                <p>Карстовое озеро с высокой прозрачностью воды. Необычные подводные пейзажи, спокойная медитативная охота.</p>
+            </div>
+        </a>
+
+        <!-- Река Мокша -->
+        <a href="moksha.html" class="location-link">
+            <div class="package-card">
+                <img src="img/tour/moksha/moksha.jpg" alt="Река Мокша">
+                <h4 class="package-card__title">Река Мокша</h4>
+                <p class="package-card__subtitle">Дикая река</p>
+                <p>Настоящая природная экспедиция. Нетронутая природа, длинные песчаные косы, глубокие омуты. Ощущение дикой природы.</p>
+            </div>
+        </a>
+
+        <!-- Озеро Рыбное -->
+        <a href="rybnoe.html" class="location-link">
+            <div class="package-card">
+                <img src="img/tour/rybnoe/rybnoe.jpg" alt="Озеро Рыбное">
+                <h4 class="package-card__title">Озеро Рыбное</h4>
+                <p class="package-card__subtitle">Камерная трофейная охота</p>
+                <p>Тихая лесная локация, точечная и вдумчивая работа. Атмосфера уединения, есть баня и мангальная зона.</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 5. Об авторских турах (сводный блок) -->
 <section class="container reveal">
     <h2 class="section-title">Об авторских турах</h2>
 
@@ -118,56 +209,13 @@
         <span class="tag">✔ опытный инструктор</span>
         <span class="tag">✔ безопасность и сопровождение</span>
     </div>
+</section>
 
-    <!-- Формат тура (ключевые цифры) -->
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Формат тура</h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 3rem;">
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
-            <div style="font-size: 2rem; color: #6af;">2</div>
-            <div>участника</div>
-        </div>
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
-            <div style="font-size: 2rem; color: #6af;">1</div>
-            <div>инструктор</div>
-        </div>
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
-            <div style="font-size: 2rem; color: #6af;">10-12</div>
-            <div>часов экспедиции</div>
-        </div>
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
-            <div style="font-size: 2rem; color: #6af;">5-6</div>
-            <div>часов охоты</div>
-        </div>
-    </div>
+<div class="divider"></div>
 
-    <!-- Локации экспедиций (карточки) -->
-    <h3 class="section-title" style="margin-bottom: 40px;">Локации экспедиций</h3>
-    <div class="packages-grid">
-        <div class="package-card">
-            <h4 class="package-card__title">Река Пьяна</h4>
-            <p class="package-card__subtitle">Экспедиционный сплав</p>
-            <p>Самая динамичная программа. Извилистая река с глубокими участками, постоянная смена локаций, высокий элемент приключения. Уникальная подводная растительность.</p>
-            <p><small>можно охотиться без погружений, формат «движения и поиска»</small></p>
-        </div>
-        <div class="package-card">
-            <h4 class="package-card__title">Озеро Вад</h4>
-            <p class="package-card__subtitle">Чистая вода и подводные ландшафты</p>
-            <p>Карстовое озеро с высокой прозрачностью воды. Необычные подводные пейзажи, спокойная медитативная охота.</p>
-        </div>
-        <div class="package-card">
-            <h4 class="package-card__title">Река Мокша</h4>
-            <p class="package-card__subtitle">Дикая река</p>
-            <p>Настоящая природная экспедиция. Нетронутая природа, длинные песчаные косы, глубокие омуты. Ощущение дикой природы.</p>
-        </div>
-        <div class="package-card">
-            <h4 class="package-card__title">Озеро Рыбное</h4>
-            <p class="package-card__subtitle">Камерная трофейная охота</p>
-            <p>Тихая лесная локация, точечная и вдумчивая работа. Атмосфера уединения, есть баня и мангальная зона.</p>
-        </div>
-    </div>
-
-    <!-- Что входит в тур (список в две колонки) -->
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin: 3rem 0 1.5rem; text-align: center;">Что входит в тур</h3>
+<!-- 6. Что входит в тур -->
+<section class="container reveal">
+    <h2 class="section-title">Что входит в тур</h2>
     <ul style="columns: 2; list-style: none; max-width: 800px; margin: 0 auto; background: rgba(10,20,30,0.5); backdrop-filter: blur(4px); padding: 2rem; border-radius: 32px;">
         <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ трансфер до локации</li>
         <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ полный комплект профессиональной экипировки</li>
@@ -179,117 +227,11 @@
         <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ базовая фото и видеосъёмка</li>
         <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ приготовление трофеев (по возможности)</li>
     </ul>
-
-    <!-- Для кого этот формат (теги) -->
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin: 3rem 0 1.5rem; text-align: center;">Для кого этот формат</h3>
-    <div class="vip-tags" style="justify-content: center;">
-        <span class="tag">собственники бизнеса</span>
-        <span class="tag">руководители компаний</span>
-        <span class="tag">предприниматели</span>
-        <span class="tag">партнёры</span>
-        <span class="tag">статусный отдых</span>
-        <span class="tag">мужской подарок</span>
-    </div>
-
-    <!-- Безопасность (блок как tour-detail) -->
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin: 3rem 0 1.5rem; text-align: center;">Безопасность</h3>
-    <div class="tour-detail" style="max-width: 800px; margin: 0 auto;">
-        <p>Безопасность участников — приоритет. Перед каждым выездом проводится обязательный брифинг. Инструктор сопровождает участников, контролирует работу в паре, следит за техникой погружений, помогает корректировать технику в процессе охоты, следит за соблюдением техники безопасности. Экипировка подбирается индивидуально. Даже если вы впервые пробуете подводную охоту — будет комфортно и безопасно.</p>
-    </div>
-
-    <!-- Стоимость (центрированный блок) -->
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin: 3rem 0 1.5rem; text-align: center;">Стоимость</h3>
-    <div style="text-align: center; background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 2rem; border-radius: 24px; max-width: 500px; margin: 0 auto;">
-        <div style="font-size: 2.5rem; color: #9cf; font-family: 'Playfair Display';">80 000 – 100 000 ₽</div>
-        <div>авторский тур для двоих</div>
-        <p style="margin-top: 1rem; color: #aaa;">В стоимость входит полная организация экспедиции и экипировка.</p>
-    </div>
-
-    <!-- Дополнительные возможности (теги) -->
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin: 3rem 0 1.5rem; text-align: center;">Дополнительные возможности</h3>
-    <div class="vip-tags" style="justify-content: center;">
-        <span class="tag">профессиональная съёмка</span>
-        <span class="tag">премиальный кейтеринг</span>
-        <span class="tag">серия экспедиций</span>
-        <span class="tag">подарочные сертификаты</span>
-        <span class="tag">корпоративные программы</span>
-    </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ПРИМЕР ТУРА: река Пьяна (детальное описание) -->
-<section class="container reveal">
-    <h2 class="section-title">Пример тура: река Пьяна</h2>
-
-    <div class="tour-detail">
-        <div class="tour-detail__header">
-            <h3>Авторский VIP-тур по подводной охоте для двоих</h3>
-            <p class="tour-detail__location">Нижегородская область</p>
-            <div class="tour-detail__badges">
-                <span class="badge">Для двоих</span>
-                <span class="badge badge--orange">Индивидуально</span>
-            </div>
-        </div>
-
-        <div class="tour-detail__content">
-            <p>Есть форматы отдыха. А есть опыт, который объединяет и запоминается на годы. Этот тур — не массовая рыбалка и не экскурсия. Это закрытая экспедиция для двоих под руководством опытного инструктора, созданная как VIP-активность для руководителей, партнёров и ключевых сотрудников.</p>
-
-            <h4>Почему именно река Пьяна?</h4>
-            <ul>
-                <li>извилистое русло, участки с глубиной и ямами</li>
-                <li>прозрачная вода в сезон, разнообразная рыба</li>
-                <li>1000 оттенков зелени – фантастическая подводная флора</li>
-                <li>уединённость и природная атмосфера</li>
-            </ul>
-
-            <h4>Формат тура</h4>
-            <ul>
-                <li><strong>Участники:</strong> 2 человека</li>
-                <li><strong>Длительность:</strong> 11 часов (охота 5–6 часов)</li>
-                <li><strong>Формат:</strong> авторская экспедиция под ключ</li>
-            </ul>
-
-            <h4>Программа подготовительного дня:</h4>
-            <ul>
-                <li>Общая информация, подбор и примерка экипировки</li>
-                <li>Инструктаж по технике безопасности и работе в паре</li>
-                <li>Медицинский брифинг</li>
-            </ul>
-
-            <h4>Программа дня охоты:</h4>
-            <ul>
-                <li>Трансфер до локации, инструктаж, брифинг по тактике</li>
-                <li>5–6 часов охоты с инструктором (контроль безопасности, коррекция техники, выбор точек)</li>
-                <li>Возвращение, горячая вода, переодевание</li>
-                <li>Питание на свежем воздухе, приготовление улова (по возможности)</li>
-            </ul>
-
-            <h4>Что входит в тур</h4>
-            <ul>
-                <li>Трансфер</li>
-                <li>Полный комплект экипировки (костюм, ласты, маска, трубка, груза, ружьё, кукан)</li>
-                <li>Инструктор, обеспечивающий безопасность</li>
-                <li>Питание, базовая фото/видеосъёмка</li>
-            </ul>
-
-            <h4>Сезонность и безопасность</h4>
-            <p>Сезон: середина июня – конец сентября (июль–октябрь оптимальны).<br>
-            Инструктор сопровождает постоянно, обязательный брифинг, контроль погружений.</p>
-
-            <p class="tour-detail__challenge">Справишься?</p>
-        </div>
-    </div>
-
-    <!-- Дополнительная информация о пакетах в контексте этого тура -->
-    <div class="tour-packages-note">
-        <p>Для этого тура доступны пакеты <strong>BASE</strong> и <strong>EXECUTIVE</strong> (см. описание выше).</p>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ФОРМА ЗАЯВКИ -->
+<!-- 7. Оставьте заявку -->
 <section class="container reveal">
     <h2 class="section-title">Оставьте заявку</h2>
 
@@ -297,13 +239,10 @@
         <p class="form-intro">Мы свяжемся с вами в ближайшее время и обсудим детали</p>
 
         <form action="https://formspree.io/f/xojnyrnr" method="POST" id="contactForm">
-
             <input type="text" name="_gotcha" style="display:none">
-
             <input type="text" name="name" placeholder="Ваше имя" required>
             <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Ваши пожелания (даты, пакет, вопросы)" rows="4" required></textarea>
-
+            <textarea name="message" placeholder="Ваши пожелания (даты, пакет, вопросы)" rows="4" required style="resize: none;"></textarea>
             <button type="submit" id="submitBtn">Отправить</button>
         </form>
 
@@ -311,25 +250,17 @@
     </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- Ссылка на каталог экспедиций -->
-<section class="container reveal" style="padding: 60px 20px; text-align: center;">
-    <p class="other-tours-note">Индивидуальные туры также возможны в любые страны из нашего <a href="expeditions.html">каталога экспедиций</a></p>
-</section>
-
 </div>
 
 <!-- ДЕСКТОПНЫЕ СКРИПТЫ -->
 <script>
 if (window.innerWidth > 900) {
-    ['js/reveal.js','js/sound.js','js/bubbles.js']
-        .forEach(src => {
-            const s = document.createElement('script');
-            s.src = src;
-            s.defer = true;
-            document.body.appendChild(s);
-        });
+    ['js/reveal.js'].forEach(src => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.defer = true;
+        document.body.appendChild(s);
+    });
 }
 </script>
 

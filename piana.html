@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Река Пьяна | ABYSS — авторский тур</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Горизонтальные фото (вверху) */
+        .piana-gallery-horizontal {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .piana-gallery-horizontal img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        .piana-gallery-horizontal img:hover {
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* Вертикальные фото (внизу) — без границ, чтобы пустые поля сливались с фоном */
+        .piana-gallery-vertical {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .piana-gallery-vertical img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;  /* фото целиком, пустые поля не видны на чёрном фоне */
+            border: none;          /* убрали рамку */
+            border-radius: 20px;   /* скругление оставим (по желанию можно убрать) */
+            transition: transform 0.3s ease;
+        }
+        .piana-gallery-vertical img:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 600px) {
+            .piana-gallery-horizontal,
+            .piana-gallery-vertical {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .piana-gallery-horizontal img {
+                height: 200px;
+            }
+            .piana-gallery-vertical img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="parallax-bg" style="background-image:url('img/fon1.jpg');">
+    <div class="grain"></div>
+    <div class="overlay"></div>
+</div>
+
+<div class="page">
+
+<header class="header container">
+    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
+    <nav class="nav">
+        <a href="expeditions.html">Экспедиции</a>
+        <a href="individual.html" class="active">Авторские туры</a>
+        <a href="media.html">Фото и Видео</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<section class="container reveal">
+    <h1 class="section-title">Река Пьяна</h1>
+
+    <!-- Горизонтальные фото (охота, пейзажи) -->
+    <div class="piana-gallery-horizontal">
+        <img src="img/tour/piana/piana3.jpg" alt="Река Пьяна, подводная охота">
+        <img src="img/tour/piana/piana4.jpg" alt="Река Пьяна, пейзаж">
+    </div>
+
+    <div class="tour-detail">
+        <div class="tour-detail__header">
+            <h3>Авторский VIP-тур по подводной охоте для двоих</h3>
+            <p class="tour-detail__location">Нижегородская область</p>
+            <div class="tour-detail__badges">
+                <span class="badge">Для двоих</span>
+                <span class="badge badge--orange">Индивидуально</span>
+            </div>
+        </div>
+
+        <div class="tour-detail__content">
+            <p>Есть форматы отдыха. А есть опыт, который объединяет и запоминается на годы. Этот тур — не массовая рыбалка и не экскурсия. Это закрытая экспедиция для двоих под руководством опытного инструктора, созданная как VIP-активность для руководителей, партнёров и ключевых сотрудников.</p>
+
+            <h4>Почему именно река Пьяна?</h4>
+            <ul>
+                <li>извилистое русло, участки с глубиной и ямами</li>
+                <li>прозрачная вода в сезон, разнообразная рыба</li>
+                <li>1000 оттенков зелени – фантастическая подводная флора</li>
+                <li>уединённость и природная атмосфера</li>
+            </ul>
+
+            <h4>Формат тура</h4>
+            <ul>
+                <li><strong>Участники:</strong> 2 человека</li>
+                <li><strong>Длительность:</strong> 11 часов (охота 5–6 часов)</li>
+                <li><strong>Формат:</strong> авторская экспедиция под ключ</li>
+            </ul>
+
+            <h4>Программа подготовительного дня:</h4>
+            <ul>
+                <li>Общая информация, подбор и примерка экипировки</li>
+                <li>Инструктаж по технике безопасности и работе в паре</li>
+                <li>Медицинский брифинг</li>
+            </ul>
+
+            <h4>Программа дня охоты:</h4>
+            <ul>
+                <li>Трансфер до локации, инструктаж, брифинг по тактике</li>
+                <li>5–6 часов охоты с инструктором (контроль безопасности, коррекция техники, выбор точек)</li>
+                <li>Возвращение, горячая вода, переодевание</li>
+                <li>Питание на свежем воздухе, приготовление улова (по возможности)</li>
+            </ul>
+
+            <h4>Что входит в тур</h4>
+            <ul>
+                <li>Трансфер</li>
+                <li>Полный комплект экипировки (костюм, ласты, маска, трубка, груза, ружьё, кукан)</li>
+                <li>Инструктор, обеспечивающий безопасность</li>
+                <li>Питание, базовая фото/видеосъёмка</li>
+            </ul>
+
+            <h4>Сезонность и безопасность</h4>
+            <p>Сезон: середина июня – конец сентября (июль–октябрь оптимальны).<br>
+            Инструктор сопровождает постоянно, обязательный брифинг, контроль погружений.</p>
+
+            <p class="tour-detail__challenge">Справишься?</p>
+        </div>
+    </div>
+
+    <!-- Вертикальные фото (улов, портреты) -->
+    <div class="piana-gallery-vertical">
+        <img src="img/tour/piana/piana1.jpg" alt="Река Пьяна, улов">
+        <img src="img/tour/piana/piana2.jpg" alt="Река Пьяна, трофей">
+    </div>
+
+    <div class="tour-packages-note" style="margin: 30px 0;">
+        <p>Для этого тура доступны пакеты <strong>BASE</strong> и <strong>EXECUTIVE</strong>.</p>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="individual.html" class="back-link">← Вернуться к авторским турам</a>
+    </div>
+</section>
+
+</div>
+
+<script>
+if (window.innerWidth > 900) {
+    ['js/reveal.js'].forEach(src => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.defer = true;
+        document.body.appendChild(s);
+    });
+}
+</script>
+
+</body>
+</html>

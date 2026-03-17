@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Озеро Рыбное | ABYSS — авторский тур</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-horizontal {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .gallery-horizontal img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-horizontal img:hover {
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.3);
+        }
+        .gallery-vertical {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .gallery-vertical img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border: none;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-vertical img:hover {
+            transform: scale(1.02);
+        }
+        @media (max-width: 600px) {
+            .gallery-horizontal,
+            .gallery-vertical {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .gallery-horizontal img {
+                height: 200px;
+            }
+            .gallery-vertical img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="parallax-bg" style="background-image:url('img/fon1.jpg');">
+    <div class="grain"></div>
+    <div class="overlay"></div>
+</div>
+
+<div class="page">
+
+<header class="header container">
+    <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
+    <nav class="nav">
+        <a href="expeditions.html">Экспедиции</a>
+        <a href="individual.html" class="active">Авторские туры</a>
+        <a href="media.html">Фото и Видео</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<section class="container reveal">
+    <h1 class="section-title">Озеро Рыбное</h1>
+
+    <!-- Горизонтальные фото -->
+    <div class="gallery-horizontal">
+        <img src="img/tour/rybnoe/rybnoe3.jpg" alt="Озеро Рыбное, пейзаж">
+        <img src="img/tour/rybnoe/rybnoe4.jpg" alt="Озеро Рыбное, охота">
+    </div>
+
+    <div class="tour-detail">
+        <div class="tour-detail__header">
+            <h3>Камерная трофейная охота</h3>
+            <p class="tour-detail__location">Нижегородская область</p>
+            <div class="tour-detail__badges">
+                <span class="badge">Для двоих</span>
+                <span class="badge badge--orange">Индивидуально</span>
+            </div>
+        </div>
+
+        <div class="tour-detail__content">
+            <p>Озеро Рыбное — спокойная лесная локация, где подводная охота проходит в более камерной атмосфере. Здесь нет длинных маршрутов и сплавов. Это точечная и вдумчивая работа на перспективных местах. Такие водоёмы ценятся за атмосферу тишины и возможность спокойно исследовать отдельные участки. Это формат охоты, где важны терпение, наблюдение и точный момент.</p>
+
+            <h4>Характер тура</h4>
+            <ul>
+                <li>тихая природная локация</li>
+                <li>спокойный формат</li>
+                <li>точечная охота</li>
+                <li>камерная атмосфера</li>
+            </ul>
+
+            <h4>Особенности</h4>
+            <ul>
+                <li>для ценителей спокойной охоты</li>
+                <li>для тех, кто хочет уединения</li>
+                <li>для неспешного формата отдыха</li>
+            </ul>
+
+            <h4>Программа тура</h4>
+            <ul>
+                <li><strong>Подготовительный день:</strong> подбор экипировки, инструктаж, разведка локации.</li>
+                <li><strong>День охоты:</strong> трансфер, 5–6 часов охоты на выбранных точках, обед с приготовлением улова, баня (по возможности), отдых.</li>
+            </ul>
+
+            <h4>Что входит</h4>
+            <ul>
+                <li>трансфер</li>
+                <li>полный комплект снаряжения</li>
+                <li>инструктор</li>
+                <li>питание, чай</li>
+                <li>базовая фото/видеосъёмка</li>
+                <li>возможность бани (уточняется)</li>
+            </ul>
+
+            <h4>Сезонность</h4>
+            <p>Сезон: середина июня – конец сентября. Особенно хорошо в августе–сентябре.</p>
+        </div>
+    </div>
+
+    <!-- Вертикальные фото -->
+    <div class="gallery-vertical">
+        <img src="img/tour/rybnoe/rybnoe1.jpg" alt="Озеро Рыбное, улов">
+        <img src="img/tour/rybnoe/rybnoe2.jpg" alt="Озеро Рыбное, трофей">
+    </div>
+
+    <div class="tour-packages-note" style="margin: 30px 0;">
+        <p>Для этого тура доступны пакеты <strong>BASE</strong> и <strong>EXECUTIVE</strong> (см. <a href="individual.html" style="color: #9cf;">описание на главной странице</a>).</p>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="individual.html" class="back-link">← Вернуться к авторским турам</a>
+    </div>
+</section>
+
+</div>
+
+<script>
+if (window.innerWidth > 900) {
+    ['js/reveal.js'].forEach(src => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.defer = true;
+        document.body.appendChild(s);
+    });
+}
+</script>
+
+</body>
+</html>
