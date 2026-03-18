@@ -183,11 +183,9 @@
     .tour-detail {
         max-width: 900px;
         margin: 0 auto;
-        background: rgba(10,20,30,0.5);
-        backdrop-filter: blur(4px);
         padding: 2.5rem;
-        border-radius: 32px;
-        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 32px; /* скругление оставим, но фон и границы убраны */
+        /* фон и границы полностью удалены */
     }
     .tour-detail__header {
         text-align: center;
@@ -300,7 +298,7 @@
         <img src="img/tour/vad/vad4.jpg" alt="Озеро Вад, охота">
     </div>
 
-    <!-- Детальное описание -->
+    <!-- Детальное описание (теперь без фона и границ) -->
     <div class="tour-detail">
         <div class="tour-detail__header">
             <h3>Чистая вода и подводные ландшафты</h3>

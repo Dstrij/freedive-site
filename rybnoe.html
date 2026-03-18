@@ -168,23 +168,21 @@
         <img src="img/tour/rybnoe/rybnoe4.jpg" alt="Озеро Рыбное, охота">
     </div>
 
-    <!-- Детальное описание тура -->
+    <!-- Детальное описание тура (без фона и границ) -->
     <style>
         .tour-detail {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(10,20,30,0.5);
-            backdrop-filter: blur(4px);
             padding: 2.5rem;
-            border-radius: 32px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 32px; /* оставляем только скругление */
+            /* фон, backdrop-filter, граница удалены */
         }
         .tour-detail__header {
             text-align: center;
             margin-bottom: 2rem;
         }
         .tour-detail__header h3 {
-            font-family: 'Cormorant Garamond', serif; /* заменяем Playfair */
+            font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
             font-weight: 600;
             color: #fff;
