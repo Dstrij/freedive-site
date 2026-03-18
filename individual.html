@@ -10,32 +10,109 @@
     <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg">
     <meta property="og:url" content="https://вашсайт.ru/individual.html">
     <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Убираем Google Fonts, используем локальные шрифты -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- ========== ОБЩИЕ СТИЛИ (СБРОС, ФОН, КОНТЕЙНЕРЫ, ЗАГОЛОВКИ) ========== -->
     <style>
-        /* Дополнительные стили для изображений в карточках локаций */
-        .package-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 16px;
-            margin-bottom: 15px;
+        /* Подключаем локальные шрифты */
+        @font-face {
+            font-family: 'Cormorant Garamond';
+            src: url('fonts/CormorantGaramond.ttf') format('truetype');
+            font-weight: 500 600;
+            font-style: normal;
+            font-display: swap;
         }
-        .location-link {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s;
+        @font-face {
+            font-family: 'Inter';
+            src: url('fonts/Inter.otf') format('opentype');
+            font-weight: 300 400 500 600;
+            font-style: normal;
+            font-display: swap;
         }
-        .location-link:hover .package-card {
-            border-color: rgba(255,255,255,0.2);
-            transform: translateY(-4px);
+
+        /* Сброс */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            min-height: 100%;
+            touch-action: pan-y pinch-zoom;
+            background: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif; /* основной шрифт Inter */
+            font-size: 16px;
+            line-height: 1.5;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        /* Фон (десктоп) */
+        #parallax-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            transform: translateZ(0);
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            will-change: transform;
+        }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+        }
+        .grain {
+            position: absolute;
+            inset: 0;
+            background: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.12;
+            pointer-events: none;
+        }
+        /* Страница */
+        .page {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+        }
+        /* Контейнер */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+        /* Разделитель */
+        .divider {
+            height: 1px;
+            margin: 20px auto;
+        }
+        /* Заголовки секций — теперь Cormorant Garamond */
+        .section-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px; /* 40–48px */
+            font-weight: 600;
+            margin-bottom: 70px;
+        }
+        /* Анимация появления */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
         }
     </style>
 </head>
 <body>
 
-<!-- BACKGROUND -->
+<!-- ФОН -->
 <div id="parallax-bg" style="background-image:url('img/fon1.jpg');">
     <div class="grain"></div>
     <div class="overlay"></div>
@@ -43,6 +120,33 @@
 
 <div class="page">
 
+<!-- ========== ШАПКА ========== -->
+<style>
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo {
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        font-family: 'Inter', sans-serif;
+    }
+    .nav {
+        display: flex;
+        gap: 40px;
+    }
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.85;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+</style>
 <header class="header container">
     <a href="index.html" style="text-decoration: none; color: inherit;"><div class="logo">ABYSS</div></a>
     <nav class="nav">
@@ -53,39 +157,103 @@
     </nav>
 </header>
 
-<!-- Герой -->
-<section class="hero" style="min-height: 50vh;">
+<!-- ========== ГЕРОЙ ========== -->
+<style>
+    .hero {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-inner {
+        text-align: center;
+    }
+    .hero h1 {
+        font-family: 'Cormorant Garamond', serif; /* заменяем Playfair */
+        font-size: 64px; /* 60–72px */
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .hero p {
+        font-size: 18px;
+        color: #bbb;
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+    }
+</style>
+<section class="hero">
     <div class="hero-inner">
         <h1>Тур под вас</h1>
         <p>Закрытые экспедиции для двоих под руководством опытного инструктора</p>
     </div>
 </section>
 
-<!-- 1. Формат тура (блок с цифрами) -->
+<!-- ========== ФОРМАТ ТУРА (ЦИФРЫ) ========== -->
+<!-- Стили уже инлайн, добавим только базовое оформление текста -->
 <section class="container reveal" style="padding-top: 20px; padding-bottom: 20px;">
     <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+        <div style="padding: 1.5rem 2rem; border-radius: 24px; min-width: 200px; text-align: center;">
             <div style="font-size: 2rem; color: #6af;">2</div>
-            <div>участника</div>
+            <div style="font-family: 'Inter', sans-serif;">участника</div>
         </div>
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+        <div style="padding: 1.5rem 2rem; border-radius: 24px; min-width: 200px; text-align: center;">
             <div style="font-size: 2rem; color: #6af;">1</div>
-            <div>инструктор</div>
+            <div style="font-family: 'Inter', sans-serif;">инструктор</div>
         </div>
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+        <div style="padding: 1.5rem 2rem; border-radius: 24px; min-width: 200px; text-align: center;">
             <div style="font-size: 2rem; color: #6af;">10-12</div>
-            <div>часов экспедиции</div>
+            <div style="font-family: 'Inter', sans-serif;">часов экспедиции</div>
         </div>
-        <div style="background: rgba(20,30,40,0.7); backdrop-filter: blur(6px); padding: 1.5rem 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); min-width: 200px; text-align: center;">
+        <div style="padding: 1.5rem 2rem; border-radius: 24px; min-width: 200px; text-align: center;">
             <div style="font-size: 2rem; color: #6af;">5-6</div>
-            <div>часов охоты</div>
+            <div style="font-family: 'Inter', sans-serif;">часов охоты</div>
         </div>
     </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- 2. VIP-концепция -->
+<!-- ========== VIP-КОНЦЕПЦИЯ ========== -->
+<style>
+    .vip-intro {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        color: #ddd;
+        font-family: 'Inter', sans-serif;
+    }
+    .vip-intro__lead {
+        font-size: 1.3rem;
+        color: #eef;
+        margin-bottom: 1rem;
+        font-weight: 300;
+    }
+    .vip-intro__accent {
+        font-size: 1.2rem;
+        color: #fffa;
+        margin: 1.5rem 0;
+        font-weight: 400;
+    }
+    .vip-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    .tag {
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(4px);
+        padding: 0.6rem 1.5rem;
+        border-radius: 40px;
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: #ccc;
+        border: 1px solid rgba(255,255,255,0.1);
+        font-family: 'Inter', sans-serif;
+    }
+</style>
 <section class="container reveal">
     <div class="vip-intro">
         <p class="vip-intro__lead">Это закрытая экспедиция для двоих под руководством опытного инструктора, созданная как VIP-активность для руководителей, партнёров и ключевых сотрудников.</p>
@@ -101,7 +269,99 @@
 
 <div class="divider"></div>
 
-<!-- 3. Пакеты -->
+<!-- ========== ПАКЕТЫ (с легким фоном и скруглением) ========== -->
+<style>
+    .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 40px 0 20px;
+    }
+    .package-card {
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        background: rgba(255,255,255,0.02);
+        backdrop-filter: none;
+        padding: 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.2s ease, border-color 0.2s;
+    }
+    .package-card:hover {
+        border-color: rgba(255,255,255,0.2);
+        transform: translateY(-4px);
+    }
+    .package-card--base {
+        border-left: 4px solid #6af;
+    }
+    .package-card--executive {
+        border-left: 4px solid #f80;
+    }
+    .package-card__title {
+        font-family: 'Cormorant Garamond', serif; /* заменяем Playfair */
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        color: #fff;
+    }
+    .package-card__price {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #9cf;
+        font-family: 'Inter', sans-serif;
+    }
+    .package-card__subtitle {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #aaa;
+        margin-bottom: 1.5rem;
+        font-family: 'Inter', sans-serif;
+    }
+    .package-card__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+    }
+    .package-card__list li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.6rem;
+        color: #ccc;
+        font-family: 'Inter', sans-serif;
+    }
+    .package-card__list li::before {
+        content: "•";
+        color: #6af;
+        position: absolute;
+        left: 0;
+    }
+    .package-card--executive .package-card__list li::before {
+        color: #f80;
+    }
+    .package-card__note {
+        color: #aaa;
+        font-style: italic;
+        font-size: 0.95rem;
+        border-top: 1px dashed rgba(255,255,255,0.1);
+        padding-top: 1rem;
+        font-family: 'Inter', sans-serif;
+    }
+    .packages-note {
+        text-align: center;
+        color: #aaa;
+        max-width: 600px;
+        margin: 2rem auto 0;
+        font-size: 0.95rem;
+        font-family: 'Inter', sans-serif;
+    }
+</style>
+
 <section class="container reveal">
     <h2 class="section-title">Пакеты</h2>
     <div class="packages-grid">
@@ -142,48 +402,128 @@
 
 <div class="divider"></div>
 
-<!-- 4. Локации экспедиций (с изображениями и ссылками) -->
-<section class="container reveal">
+<!-- ========== ЛОКАЦИИ ЭКСПЕДИЦИЙ (полностью прозрачные, без скруглений) ========== -->
+<style>
+    /* Контейнер для локаций, чтобы стили не задевали другие блоки */
+    .locations-block .package-card {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        backdrop-filter: none;
+        box-shadow: none;
+    }
+    .locations-block .package-card:hover {
+        transform: translateY(-4px);
+        border-color: transparent;
+    }
+    .locations-block .package-card__image {
+        border-radius: 0;
+        flex: 1 1 0;
+        min-height: 180px;
+        overflow: hidden;
+    }
+    .locations-block .package-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+    .locations-block .package-card__content {
+        flex: 1 1 0;
+        padding: 2rem 1.4rem;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: #fff;
+        background-color: transparent;
+    }
+    .locations-block .package-card__content::before {
+        display: none;
+    }
+    .locations-block .package-card__content * {
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+    .location-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease;
+    }
+    .location-link:hover {
+        transform: translateY(-4px);
+    }
+    /* Заголовки в карточках локаций тоже используют Cormorant */
+    .locations-block .package-card__title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    .locations-block .package-card__subtitle,
+    .locations-block .package-card__content p,
+    .locations-block .package-card__content small {
+        font-family: 'Inter', sans-serif;
+    }
+</style>
+
+<section class="container reveal locations-block">
     <h2 class="section-title">Локации экспедиций</h2>
     <div class="packages-grid">
         <!-- Река Пьяна -->
         <a href="piana.html" class="location-link">
             <div class="package-card">
-                <img src="img/tour/piana/piana.jpg" alt="Река Пьяна">
-                <h4 class="package-card__title">Река Пьяна</h4>
-                <p class="package-card__subtitle">Экспедиционный сплав</p>
-                <p>Самая динамичная программа. Извилистая река с глубокими участками, постоянная смена локаций, высокий элемент приключения. Уникальная подводная растительность.</p>
-                <p><small>можно охотиться без погружений, формат «движения и поиска»</small></p>
+                <div class="package-card__image">
+                    <img src="img/tour/piana/piana.jpg" alt="Река Пьяна">
+                </div>
+                <div class="package-card__content" style="background-image: url('img/tour/piana/piana.jpg');">
+                    <h4 class="package-card__title">Река Пьяна</h4>
+                    <p class="package-card__subtitle">Экспедиционный сплав</p>
+                    <p>Самая динамичная программа. Извилистая река с глубокими участками, постоянная смена локаций, высокий элемент приключения. Уникальная подводная растительность.</p>
+                    <p><small>можно охотиться без погружений, формат «движения и поиска»</small></p>
+                </div>
             </div>
         </a>
 
         <!-- Озеро Вад -->
         <a href="vad.html" class="location-link">
             <div class="package-card">
-                <img src="img/tour/vad/vad.jpg" alt="Озеро Вад">
-                <h4 class="package-card__title">Озеро Вад</h4>
-                <p class="package-card__subtitle">Чистая вода и подводные ландшафты</p>
-                <p>Карстовое озеро с высокой прозрачностью воды. Необычные подводные пейзажи, спокойная медитативная охота.</p>
+                <div class="package-card__image">
+                    <img src="img/tour/vad/vad.jpg" alt="Озеро Вад">
+                </div>
+                <div class="package-card__content" style="background-image: url('img/tour/vad/vad.jpg');">
+                    <h4 class="package-card__title">Озеро Вад</h4>
+                    <p class="package-card__subtitle">Чистая вода и подводные ландшафты</p>
+                    <p>Карстовое озеро с высокой прозрачностью воды. Необычные подводные пейзажи, спокойная медитативная охота.</p>
+                </div>
             </div>
         </a>
 
         <!-- Река Мокша -->
         <a href="moksha.html" class="location-link">
             <div class="package-card">
-                <img src="img/tour/moksha/moksha.jpg" alt="Река Мокша">
-                <h4 class="package-card__title">Река Мокша</h4>
-                <p class="package-card__subtitle">Дикая река</p>
-                <p>Настоящая природная экспедиция. Нетронутая природа, длинные песчаные косы, глубокие омуты. Ощущение дикой природы.</p>
+                <div class="package-card__image">
+                    <img src="img/tour/moksha/moksha.jpg" alt="Река Мокша">
+                </div>
+                <div class="package-card__content" style="background-image: url('img/tour/moksha/moksha.jpg');">
+                    <h4 class="package-card__title">Река Мокша</h4>
+                    <p class="package-card__subtitle">Дикая река</p>
+                    <p>Настоящая природная экспедиция. Нетронутая природа, длинные песчаные косы, глубокие омуты. Ощущение дикой природы.</p>
+                </div>
             </div>
         </a>
 
         <!-- Озеро Рыбное -->
         <a href="rybnoe.html" class="location-link">
             <div class="package-card">
-                <img src="img/tour/rybnoe/rybnoe.jpg" alt="Озеро Рыбное">
-                <h4 class="package-card__title">Озеро Рыбное</h4>
-                <p class="package-card__subtitle">Камерная трофейная охота</p>
-                <p>Тихая лесная локация, точечная и вдумчивая работа. Атмосфера уединения, есть баня и мангальная зона.</p>
+                <div class="package-card__image">
+                    <img src="img/tour/rybnoe/rybnoe.jpg" alt="Озеро Рыбное">
+                </div>
+                <div class="package-card__content" style="background-image: url('img/tour/rybnoe/rybnoe.jpg');">
+                    <h4 class="package-card__title">Озеро Рыбное</h4>
+                    <p class="package-card__subtitle">Камерная трофейная охота</p>
+                    <p>Тихая лесная локация, точечная и вдумчивая работа. Атмосфера уединения, есть баня и мангальная зона.</p>
+                </div>
             </div>
         </a>
     </div>
@@ -191,18 +531,14 @@
 
 <div class="divider"></div>
 
-<!-- 5. Об авторских турах (сводный блок) -->
+<!-- ========== ОБ АВТОРСКИХ ТУРАХ (СВОДНЫЙ БЛОК) ========== -->
 <section class="container reveal">
     <h2 class="section-title">Об авторских турах</h2>
-
-    <!-- Краткое введение -->
-    <p class="vip-intro__lead" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+    <p class="vip-intro__lead" style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-family: 'Inter', sans-serif;">
         Мы проводим персональные экспедиции для двоих на лучших водоёмах Нижегородской области.<br>
         Только два участника и опытный инструктор. Никаких групп, случайных туристов и стандартных туров.<br>
         Только вы и подводный мир.
     </p>
-
-    <!-- Блок доверия (преимущества) -->
     <div class="vip-tags" style="justify-content: center; margin-bottom: 4rem;">
         <span class="tag">✔ индивидуальная экипировка</span>
         <span class="tag">✔ разведанные локации</span>
@@ -213,31 +549,112 @@
 
 <div class="divider"></div>
 
-<!-- 6. Что входит в тур -->
+<!-- ========== ЧТО ВХОДИТ В ТУР ========== -->
+<style>
+    .included-list {
+        columns: 2;
+        list-style: none;
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(10,20,30,0.5);
+        backdrop-filter: blur(4px);
+        padding: 2rem;
+        border-radius: 32px;
+        font-family: 'Inter', sans-serif;
+    }
+    .included-list li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: #ddd;
+    }
+    .included-list li::before {
+        content: "✓";
+        color: #6af;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+</style>
 <section class="container reveal">
     <h2 class="section-title">Что входит в тур</h2>
-    <ul style="columns: 2; list-style: none; max-width: 800px; margin: 0 auto; background: rgba(10,20,30,0.5); backdrop-filter: blur(4px); padding: 2rem; border-radius: 32px;">
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ трансфер до локации</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ полный комплект профессиональной экипировки</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ персональный инструктор</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ инструктаж по технике безопасности</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ подбор перспективных мест</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ сопровождение во время погружений</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ питание на природе</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ базовая фото и видеосъёмка</li>
-        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">✓ приготовление трофеев (по возможности)</li>
+    <ul class="included-list">
+        <li>трансфер до локации</li>
+        <li>полный комплект профессиональной экипировки</li>
+        <li>персональный инструктор</li>
+        <li>инструктаж по технике безопасности</li>
+        <li>подбор перспективных мест</li>
+        <li>сопровождение во время погружений</li>
+        <li>питание на природе</li>
+        <li>базовая фото и видеосъёмка</li>
+        <li>приготовление трофеев (по возможности)</li>
     </ul>
 </section>
 
 <div class="divider"></div>
 
-<!-- 7. Оставьте заявку -->
+<!-- ========== ОСТАВЬТЕ ЗАЯВКУ ========== -->
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: 'Inter', sans-serif;
+    }
+    .form-intro {
+        text-align: center;
+        color: #bbb;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+    #contactForm input,
+    #contactForm textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        background: rgba(255,255,255,0.1);
+        border: none;
+        color: #fff;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+    }
+    #contactForm input:focus,
+    #contactForm textarea:focus {
+        outline: 1px solid #6af;
+        background: rgba(255,255,255,0.15);
+    }
+    #contactForm button {
+        width: 100%;
+        padding: 16px 36px;
+        background: #fff;
+        border: none;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        box-sizing: border-box;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 8px;
+        transition: background 0.2s;
+        font-family: 'Inter', sans-serif;
+    }
+    #contactForm button:hover {
+        background: #eef;
+    }
+    .form-status {
+        opacity: 0;
+        margin-top: 20px;
+        color: #9f9;
+        transition: opacity .4s ease;
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+    }
+</style>
 <section class="container reveal">
     <h2 class="section-title">Оставьте заявку</h2>
-
     <div class="form-container">
         <p class="form-intro">Мы свяжемся с вами в ближайшее время и обсудим детали</p>
-
         <form action="https://formspree.io/f/xojnyrnr" method="POST" id="contactForm">
             <input type="text" name="_gotcha" style="display:none">
             <input type="text" name="name" placeholder="Ваше имя" required>
@@ -245,14 +662,109 @@
             <textarea name="message" placeholder="Ваши пожелания (даты, пакет, вопросы)" rows="4" required style="resize: none;"></textarea>
             <button type="submit" id="submitBtn">Отправить</button>
         </form>
-
         <div id="formStatus" class="form-status">✔ Заявка отправлена. Мы скоро свяжемся с вами</div>
     </div>
 </section>
 
-</div>
+</div> <!-- .page -->
 
-<!-- ДЕСКТОПНЫЕ СКРИПТЫ -->
+<!-- ========== МОБИЛЬНЫЕ СТИЛИ ========== -->
+<style>
+    @media (max-width: 900px) {
+        .container {
+            padding: 40px 16px;
+        }
+        #parallax-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+        .overlay,
+        .grain {
+            display: none;
+        }
+        .page {
+            position: relative;
+            z-index: 2;
+            min-height: 100%;
+        }
+        html, body {
+            background: #000;
+        }
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+        .hero {
+            min-height: 30vh !important;
+        }
+        .hero h1 {
+            font-size: 42px;
+        }
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .packages-grid {
+            gap: 15px;
+        }
+        .package-card {
+            padding: 1.2rem;
+        }
+        .package-card__title {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            padding: 80px 16px;
+        }
+        .header {
+            flex-direction: column;
+            gap: 20px;
+        }
+        .nav {
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+        }
+        .nav a {
+            font-size: 14px;
+            display: block;
+            padding: 5px 0;
+        }
+        .hero h1 {
+            font-size: 36px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 16px;
+        }
+        .hero-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        .hero-inner button {
+            margin: 0;
+            width: 100%;
+            max-width: 300px;
+        }
+        .included-list {
+            columns: 1;
+        }
+    }
+</style>
+
+<!-- СКРИПТЫ -->
 <script>
 if (window.innerWidth > 900) {
     ['js/reveal.js'].forEach(src => {
@@ -264,7 +776,6 @@ if (window.innerWidth > 900) {
 }
 </script>
 
-<!-- FORMSPREE AJAX -->
 <script>
 (function () {
     const form = document.getElementById('contactForm');
