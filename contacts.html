@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Контакты ABYSS | Свяжитесь с нами по вопросам экспедиций</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Свяжитесь с командой ABYSS: info@abyss.expeditions, телефон, адрес в Москве. Ответим на вопросы об экспедициях, индивидуальных турах и сотрудничестве.">
+    <meta name="description" content="Свяжитесь с командой ABYSS: info@abyss.expeditions, телефон, адрес в Нижнем Новгороде. Ответим на вопросы об экспедициях, индивидуальных турах и сотрудничестве.">
     <meta property="og:title" content="Контакты ABYSS — авторские экспедиции">
     <meta property="og:description" content="Напишите нам или позвоните. Мы всегда на связи!">
     <meta property="og:image" content="https://вашсайт.ru/img/og-image.jpg">
@@ -212,6 +212,24 @@
         color: #ddd;
         font-family: 'Inter', sans-serif;
     }
+    /* Стили для кнопки маршрута */
+    .route-button {
+        display: inline-block;
+        padding: 12px 24px;
+        margin-top: 10px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 40px;
+        color: #9cf;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background 0.2s, border-color 0.2s;
+    }
+    .route-button:hover {
+        background: rgba(255,255,255,0.15);
+        border-color: rgba(255,255,255,0.3);
+    }
     .form-wrapper {
         max-width: 420px;
         margin: 0 auto;
@@ -269,8 +287,10 @@
             <h3>Контакты</h3>
             <p class="contact-detail">✉️ info@abyss.expeditions</p>
             <p class="contact-detail">📞 +7 (999) 123-45-67</p>
-            <p class="contact-detail">📍 Москва, ул. Морская, д. 1</p>
+            <p class="contact-detail">📍 Нижний Новгород, ул. Добролюбова, 8</p>
             <p class="contact-detail">🌐 @abyss_official</p>
+            <!-- Кнопка маршрута -->
+            <a href="https://yandex.ru/maps/?rtext=~56.324760,43.993742" target="_blank" rel="noopener noreferrer" class="route-button">🚗 Проложить маршрут</a>
         </div>
         <!-- Форма -->
         <div class="contact-form">
@@ -305,7 +325,15 @@
     }
 </style>
 <section class="container reveal">
-    <div class="map-placeholder">Здесь будет карта</div>
+    <div style="position: relative; overflow: hidden; height: 300px; border-radius: 8px;">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=43.993742,56.324760&z=17&pt=43.993742,56.324760,pm2rdm&l=map" 
+                width="100%" 
+                height="300" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                style="position: relative; display: block;">
+        </iframe>
+    </div>
 </section>
 
 <div class="divider"></div>

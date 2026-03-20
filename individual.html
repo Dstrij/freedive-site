@@ -402,15 +402,54 @@
 
 <div class="divider"></div>
 
-<!-- ========== ЛОКАЦИИ ЭКСПЕДИЦИЙ (полностью прозрачные, без скруглений) ========== -->
+
+<!-- ========== ЛОКАЦИИ ЭКСПЕДИЦИЙ (на всю ширину, 4 колонки, с отступами, одинаковые картинки) ========== -->
 <style>
-    /* Контейнер для локаций, чтобы стили не задевали другие блоки */
+    /* Секция на всю ширину с боковыми отступами */
+    .full-width {
+        max-width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    /* Сетка на 4 колонки с увеличенными отступами */
+    .full-width .packages-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin: 40px 0 20px;
+    }
+    /* Адаптация для планшетов и мобильных */
+    @media (max-width: 1100px) {
+        .full-width .packages-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 800px) {
+        .full-width .packages-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 550px) {
+        .full-width .packages-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    /* На мобильных уменьшаем боковые отступы */
+    @media (max-width: 900px) {
+        .full-width {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    /* Стили карточек — одинаковые размеры */
     .locations-block .package-card {
         border: none;
         border-radius: 0;
         background: transparent;
         backdrop-filter: none;
         box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
     .locations-block .package-card:hover {
         transform: translateY(-4px);
@@ -418,8 +457,8 @@
     }
     .locations-block .package-card__image {
         border-radius: 0;
-        flex: 1 1 0;
-        min-height: 180px;
+        flex-shrink: 0;
+        height: 200px;
         overflow: hidden;
     }
     .locations-block .package-card__image img {
@@ -429,7 +468,7 @@
         border-radius: 0;
     }
     .locations-block .package-card__content {
-        flex: 1 1 0;
+        flex: 1;
         padding: 2rem 1.4rem;
         background-size: cover;
         background-position: center;
@@ -454,7 +493,6 @@
     .location-link:hover {
         transform: translateY(-4px);
     }
-    /* Заголовки в карточках локаций тоже используют Cormorant */
     .locations-block .package-card__title {
         font-family: 'Cormorant Garamond', serif;
         font-size: 1.8rem;
@@ -465,22 +503,29 @@
     .locations-block .package-card__content small {
         font-family: 'Inter', sans-serif;
     }
+
+    /* На мобильных уменьшаем высоту изображения */
+    @media (max-width: 600px) {
+        .locations-block .package-card__image {
+            height: 150px;
+        }
+    }
 </style>
 
-<section class="container reveal locations-block">
+<section class="container reveal full-width locations-block">
     <h2 class="section-title">Локации экспедиций</h2>
     <div class="packages-grid">
         <!-- Река Пьяна -->
         <a href="piana.html" class="location-link">
             <div class="package-card">
                 <div class="package-card__image">
-                    <img src="img/tour/piana/piana.jpg" alt="Река Пьяна">
+                    <img src="img/icons/icon (7).png" alt="Река Пьяна">
                 </div>
-                <div class="package-card__content" style="background-image: url('img/tour/piana/piana.jpg');">
+                <div class="package-card__content" style="background-image: url('img/icons/icon\ \(1\).png');">
                     <h4 class="package-card__title">Река Пьяна</h4>
                     <p class="package-card__subtitle">Экспедиционный сплав</p>
-                    <p>Самая динамичная программа. Извилистая река с глубокими участками, постоянная смена локаций, высокий элемент приключения. Уникальная подводная растительность.</p>
-                    <p><small>можно охотиться без погружений, формат «движения и поиска»</small></p>
+                    <p>Самая динамичная программа. Уникальная подводная растительность.</p>
+                    <p>можно охотиться без погружений, формат «движения и поиска»</p>
                 </div>
             </div>
         </a>
@@ -491,7 +536,7 @@
                 <div class="package-card__image">
                     <img src="img/tour/vad/vad.jpg" alt="Озеро Вад">
                 </div>
-                <div class="package-card__content" style="background-image: url('img/tour/vad/vad.jpg');">
+                <div class="package-card__content" style="background-image: url('img/icons/icon\ \(6\).png');">
                     <h4 class="package-card__title">Озеро Вад</h4>
                     <p class="package-card__subtitle">Чистая вода и подводные ландшафты</p>
                     <p>Карстовое озеро с высокой прозрачностью воды. Необычные подводные пейзажи, спокойная медитативная охота.</p>
@@ -505,7 +550,7 @@
                 <div class="package-card__image">
                     <img src="img/tour/moksha/moksha.jpg" alt="Река Мокша">
                 </div>
-                <div class="package-card__content" style="background-image: url('img/tour/moksha/moksha.jpg');">
+                <div class="package-card__content" style="background-image: url('img/icons/icon\ \(3\).png');">
                     <h4 class="package-card__title">Река Мокша</h4>
                     <p class="package-card__subtitle">Дикая река</p>
                     <p>Настоящая природная экспедиция. Нетронутая природа, длинные песчаные косы, глубокие омуты. Ощущение дикой природы.</p>
@@ -519,7 +564,7 @@
                 <div class="package-card__image">
                     <img src="img/tour/rybnoe/rybnoe.jpg" alt="Озеро Рыбное">
                 </div>
-                <div class="package-card__content" style="background-image: url('img/tour/rybnoe/rybnoe.jpg');">
+                <div class="package-card__content" style="background-image: url('img/icons/icon\ \(4\).png');">
                     <h4 class="package-card__title">Озеро Рыбное</h4>
                     <p class="package-card__subtitle">Камерная трофейная охота</p>
                     <p>Тихая лесная локация, точечная и вдумчивая работа. Атмосфера уединения, есть баня и мангальная зона.</p>
@@ -530,6 +575,7 @@
 </section>
 
 <div class="divider"></div>
+
 
 <!-- ========== ОБ АВТОРСКИХ ТУРАХ (СВОДНЫЙ БЛОК) ========== -->
 <section class="container reveal">
@@ -549,18 +595,17 @@
 
 <div class="divider"></div>
 
-<!-- ========== ЧТО ВХОДИТ В ТУР ========== -->
+<!-- ========== ЧТО ВХОДИТ В ТУР (без фона и размытия) ========== -->
 <style>
     .included-list {
         columns: 2;
         list-style: none;
         max-width: 800px;
         margin: 0 auto;
-        background: rgba(10,20,30,0.5);
-        backdrop-filter: blur(4px);
         padding: 2rem;
         border-radius: 32px;
         font-family: 'Inter', sans-serif;
+        /* фон и размытие удалены */
     }
     .included-list li {
         margin-bottom: 0.8rem;
@@ -679,7 +724,11 @@
             inset: 0;
             z-index: 0;
         }
-        .overlay,
+        .overlay{
+            background: rgba(0,0,0,0.3);
+        }
+
+        
         .grain {
             display: none;
         }
